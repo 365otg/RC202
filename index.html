@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Paris RC-202 Loop Station Guide: Ultimate Edition</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Master your BOSS RC-202 Loop Station with this comprehensive guide by Charles Paris Music. Explore essential tips, advanced techniques, workflow hacks, and detailed explanations for recording, effects, rhythm, and system settings.">
+    <meta name="keywords" content="BOSS RC-202, Loop Station, RC-202 Guide, RC-202 Tutorial, RC-202 Tips, Looper, Effects, Rhythm, MIDI, USB, Music Production, Live Looping, Charles Paris Music">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- jsPDF library for PDF generation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        
+        :root {
+            --op1-bg: #1a1a1a;
+            --op1-card-bg: #252525;
+            --op1-accent-blue: #00A8CC;
+            --op1-accent-hover: #00c0e6;
+            --op1-accent-ochre: #E6A336;
+            --op1-accent-gray: #888888;
+            --op1-accent-orange: #FF4500;
+            --op1-muted: #4a4a4a;
+            --op1-muted-hover: #5a5a5a;
+            --op1-text-light: #f0f0f0;
+            --op1-text-dark: #a0a0a0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--op1-bg);
+            color: var(--op1-text-light);
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .card {
+            background-color: var(--op1-card-bg);
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            display: flex;
+            flex-direction: column;
+        }
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+        }
+        .tip-category-button, .header-button {
+            background-color: var(--op1-muted);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            transition: background-color 0.2s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+        }
+        .tip-category-button:hover, .header-button:hover {
+            background-color: var(--op1-muted-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        .tip-category-button.active {
+            background-color: var(--op1-accent-blue);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+        }
+        .tip-item {
+            background-color: #333333;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 5px solid var(--op1-accent-blue);
+        }
+        .modal {
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 50;
+        }
+        .modal-content {
+            background-color: var(--op1-card-bg);
+            border-radius: 16px;
+        }
+        .close-button {
+            color: #F0F0F0;
+            font-size: 1.8rem;
+            transition: color 0.2s;
+        }
+        .close-button:hover {
+            color: #FF8888;
+        }
+        .search-input {
+            background-color: var(--op1-bg);
+            border: 1px solid var(--op1-muted);
+            color: #F0F0F0;
+            padding: 14px 20px;
+            border-radius: 10px;
+            outline: none;
+            width: 100%;
+            max-width: 450px;
+        }
+        .search-input::placeholder {
+            color: var(--op1-text-dark);
+        }
+        .search-button, #download-pdf-button, .more-info-button, #back-to-tip-button {
+            background-color: var(--op1-accent-blue);
+            color: #ffffff;
+            padding: 12px 22px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            border: none;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .search-button:hover, #download-pdf-button:hover, .more-info-button:hover, #back-to-tip-button:hover {
+            background-color: var(--op1-accent-hover);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+        .related-tips-container, .suggested-tip-container {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--op1-muted);
+        }
+        .suggested-tip-box, .related-tip-box {
+            background-color: #252525;
+            border: 1px solid var(--op1-muted);
+            border-left: 5px solid var(--op1-accent-blue);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .suggested-tip-box:hover, .related-tip-box:hover {
+            background-color: #333;
+        }
+        .tip-icon {
+            margin-right: 12px;
+            color: var(--op1-accent-blue);
+            font-size: 1.1em;
+        }
+        .copy-button {
+            background-color: var(--op1-muted);
+            color: #ffffff;
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.2s ease-in-out;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+        }
+        .copy-button:hover {
+            background-color: var(--op1-muted-hover);
+        }
+        footer { border-top: 1px solid var(--op1-muted); padding-top: 2rem; margin-top: 4rem; }
+        .footer-link { transition: color 0.2s ease-in-out; color: var(--op1-text-dark); }
+        .footer-link:hover { color: var(--op1-accent-blue); }
+        h1, h2, h3, h4 { color: var(--op1-text-light); }
+        p, li { color: #b0b0b0; }
+        .main-title {
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+        .combo-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+        .combo-table th, .combo-table td {
+            border: 1px solid var(--op1-muted);
+            padding: 12px;
+            text-align: left;
+        }
+        .combo-table th {
+            background-color: var(--op1-muted);
+        }
+        .combo-key {
+            background-color: var(--op1-text-dark);
+            color: var(--op1-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+        .details-view { animation: fadeIn 0.3s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center px-4">
+
+    <header class="w-full max-w-6xl text-center mb-12 flex flex-col items-center">
+        <div class="w-full flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
+            <div class="flex flex-wrap justify-center gap-2">
+                <button id="rhythm-patterns-button" class="header-button"><i class="fa-solid fa-drum mr-2"></i>Rhythm Patterns</button>
+                <button id="effects-list-button" class="header-button"><i class="fas fa-sliders mr-2"></i>FX List</button>
+                <button id="external-control-button" class="header-button"><i class="fas fa-gamepad mr-2"></i>External Control</button>
+                <button id="system-shortcuts-button" class="header-button"><i class="fas fa-keyboard mr-2"></i>System Shortcuts</button>
+            </div>
+        </div>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl main-title mb-4">Charles Paris RC-202 Loop Station Guide</h1>
+        <p class="text-lg sm:text-xl lg:text-2xl text-gray-300">Your ultimate companion for the BOSS RC-202.</p>
+    </header>
+
+    <main class="w-full max-w-6xl">
+        <!-- Removed search input and button -->
+        <section class="mb-16 p-6 bg-[#1E1E1E] rounded-lg shadow-xl">
+            <h2 class="text-3xl font-bold text-white mb-6 text-center">Essential Tips to Get You Started <i class="fa-solid fa-bolt tip-icon"></i></h2>
+            <div id="top-tips-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </section>
+
+        <div class="mb-12">
+            <h3 class="text-2xl font-bold text-center mb-6">Filter by Category</h3>
+            <div id="category-filter-container" class="flex flex-wrap justify-center gap-4"></div>
+        </div>
+
+        <section id="tips-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"></section>
+        
+        <div class="flex justify-center mt-16">
+            <button id="download-pdf-button" class="search-button"><i class="fa-solid fa-file-pdf"></i> Download All Tips as PDF</button>
+        </div>
+    </main>
+
+    <!-- Tip Modal -->
+    <div id="tip-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
+        <div class="modal-content w-full max-w-3xl p-8 relative overflow-y-auto max-h-[90vh]">
+            <button id="close-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
+            <div id="main-tip-view">
+                <h3 id="modal-title" class="text-3xl font-semibold mb-2"></h3>
+                <p id="modal-description" class="text-lg leading-relaxed"></p>
+                <p id="modal-source" class="text-sm mt-6"></p>
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <button id="copy-tip-button" class="copy-button"><i class="fa-solid fa-copy"></i> Copy Tip</button>
+                    <button id="more-info-button" class="more-info-button"><i class="fa-solid fa-circle-info"></i> More Info</button>
+                </div>
+            </div>
+            <div id="details-view" class="hidden">
+                <h3 id="details-title" class="text-3xl font-semibold mb-2"></h3>
+                <div id="details-content" class="text-lg leading-relaxed prose prose-invert max-w-none"></div>
+                
+                <div id="related-tips-container" class="related-tips-container">
+                    <h4 class="text-2xl font-semibold mb-4">Related Tips</h4>
+                    <div id="related-tips-list" class="space-y-3"></div>
+                </div>
+
+                <div id="suggested-tip-container" class="suggested-tip-container">
+                    <h4 class="text-2xl font-semibold mb-4">Suggested Tip</h4>
+                    <div id="suggested-tip-box-content"></div>
+                </div>
+                
+                <button id="back-to-tip-button" class="search-button mt-6"><i class="fa-solid fa-arrow-left"></i> Back to Tip</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Rhythm Patterns Modal -->
+    <div id="rhythm-patterns-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
+        <div class="modal-content w-full max-w-4xl p-8 relative overflow-y-auto max-h-[90vh]">
+            <button id="close-rhythm-patterns-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
+            <h3 class="text-4xl font-semibold mb-6"><i class="fa-solid fa-drum mr-3"></i>RC-202 Rhythm Patterns</h3>
+            <div id="rhythm-patterns-content" class="text-lg leading-relaxed"></div>
+        </div>
+    </div>
+    
+    <!-- Effects List Modal -->
+    <div id="effects-list-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
+        <div class="modal-content w-full max-w-4xl p-8 relative overflow-y-auto max-h-[90vh]">
+            <button id="close-effects-list-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
+            <h3 class="text-4xl font-semibold mb-6">RC-202 FX List</h3>
+            <input type="search" id="effects-search-input" placeholder="Search effects..." class="search-input mb-6 w-full">
+            <div id="effects-list-container" class="text-lg leading-relaxed"></div>
+        </div>
+    </div>
+    
+    <!-- External Control Modal -->
+    <div id="external-control-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
+        <div class="modal-content w-full max-w-4xl p-8 relative overflow-y-auto max-h-[90vh]">
+            <button id="close-external-control-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
+            <h3 class="text-4xl font-semibold mb-6">External Control Assignments</h3>
+            <div id="external-control-container" class="text-lg leading-relaxed"></div>
+        </div>
+    </div>
+
+    <!-- System Shortcuts Modal -->
+    <div id="system-shortcuts-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
+        <div class="modal-content w-full max-w-4xl p-8 relative overflow-y-auto max-h-[90vh]">
+            <button id="close-system-shortcuts-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
+            <h3 class="text-4xl font-semibold mb-6">System Settings & Shortcuts</h3>
+            <div id="system-shortcuts-container" class="text-sm leading-relaxed"></div>
+        </div>
+    </div>
+
+    <footer class="w-full max-w-6xl text-center text-gray-500">
+        <p class="mb-4">RC-202 Guide by <a href="https://www.charlesparis.com" target="_blank" class="font-bold footer-link">Charles Paris Music</a></p>
+        <div class="flex justify-center items-center gap-6 text-2xl">
+            <a href="https://www.boss.info/us/" target="_blank" class="footer-link"><i class="fas fa-globe"></i></a>
+            <a href="https://www.youtube.com/user/BOSSchannel" target="_blank" class="footer-link"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const { jsPDF } = window.jspdf;
+
+        const categories = {
+            basic_operations: { name: "Basic Operations", icon: 'fa-solid fa-play' },
+            phrase_memories: { name: "Phrase Memories", icon: 'fa-solid fa-memory' },
+            track_settings: { name: "Track Settings", icon: 'fa-solid fa-layer-group' },
+            effects: { name: "Effects", icon: 'fa-solid fa-magic-sparkles' },
+            rhythm: { name: "Rhythm", icon: 'fa-solid fa-drum' },
+            external_control: { name: "External Control", icon: 'fa-solid fa-gamepad' },
+            system_settings: { name: "System Settings", icon: 'fa-solid fa-gear' },
+            connections: { name: "Connections", icon: 'fa-solid fa-plug' },
+            troubleshooting: { name: "Troubleshooting", icon: 'fa-solid fa-triangle-exclamation' },
+            important_notes: { name: "Important Notes", icon: 'fa-solid fa-circle-info' }
+        };
+
+        const tipsData = [
+            // --- BASIC OPERATIONS ---
+            { category: "basic_operations", title: "Power On/Off Safely", description: "Always turn your amp off first before powering off the RC-202. Never power off during recording or data transfer to avoid data loss.", source: "Owner's Manual p.7", topTip: true, context: "Proper power cycling prevents potential data corruption or hardware issues. The RC-202 automatically saves your work, but abrupt power loss during active operations can still lead to problems.", related: ["Automatic Saving (System)"] },
+            { category: "basic_operations", title: "Adjusting Input Levels", description: "Set the [MIC LEVEL] knob so the PEAK indicator occasionally lights orange. Green is low, Red is excessive.", source: "Owner's Manual p.6", context: "Optimal input levels are crucial for clean recordings. Too low, and your loops will be noisy; too high, and they'll clip and distort. Aim for the orange indicator for a healthy signal." },
+            { category: "basic_operations", title: "Setting Tempo (Tap Tempo)", description: "Tap the [TAP TEMPO] button multiple times to set the tempo. Turn the [VALUE] knob to fine-tune. Hold [TAP TEMPO] to revert to saved tempo.", source: "Owner's Manual p.4", topTip: true, context: "Tempo is fundamental for synchronized looping. Tap tempo is intuitive for live performance, while knob adjustment allows for precise BPM settings. The RC-202's tempo can also be synchronized via MIDI (see System Settings).", related: ["MIDI Sync Settings"] },
+            { category: "basic_operations", title: "Recording, Overdubbing, Playback", description: "Press [▶/■] to cycle: Record (Red) -> Playback (Green) -> Overdub (Orange). Hold [■] to clear a track.", source: "Owner's Manual p.4", context: "This is the core looping workflow. Understanding the indicator colors helps you know the track's status at a glance. Overdubbing layers new audio, while 'Replace' mode (see Track Settings) overwrites." },
+            { category: "basic_operations", title: "Overdub vs. Replace Mode", description: "In Track Settings, choose between 'Overdub' (layering) or 'Replace' (overwriting) for new recordings on existing tracks.", source: "Parameter Guide p.11", context: "This setting determines how new audio interacts with existing loops. Overdub is ideal for building complex layers, while Replace is useful for correcting mistakes or creating variations on a theme.", related: ["Track Playback Method"] },
+
+            // --- PHRASE MEMORIES & BANKS ---
+            { category: "phrase_memories", title: "Selecting Phrase Memories & Banks", description: "Press [MEMORY], then use buttons 1-8 for phrase memories. Turn [VALUE] to select banks. Hold [VALUE] while turning for bank selection in Play screen.", source: "Owner's Manual p.5", topTip: true, context: "The RC-202 organizes your loops into 8 phrase memories per bank, and 8 banks total. Efficient navigation allows for quick song changes or live arrangement." },
+            { category: "phrase_memories", title: "Saving Phrase Memories (Write)", description: "Press [WRITE], select destination (1-8), then press [WRITE] again. Bank settings are saved automatically with phrase memories.", source: "Owner's Manual p.5", context: "Always save your work! Unsaved changes are lost on power off or when switching memories/banks. If memory is full (E04), delete old phrases first.", related: ["Deleting Phrase Memories", "Troubleshooting: Error Messages"] },
+            { category: "phrase_memories", title: "Deleting Phrase Memories", description: "Hold [WRITE] for 2 seconds, select memory to delete (1-8), then press [WRITE]. Press [SETUP] to cancel.", source: "Owner's Manual p.5", context: "Be careful! Deleted phrase memories, especially demo data in Bank 8, cannot be recovered. Back up important loops via USB before deleting." },
+            { category: "phrase_memories", title: "Bank Settings Overview", description: "Press [SETUP], then select RHYTHM, LOOP, CTL, or FX buttons to access bank-specific settings. Use [VALUE] knob to edit.", source: "Parameter Guide p.9", context: "Bank settings allow you to customize the behavior of the rhythm, looper, external controllers, and effects for each bank independently. These settings are saved with the phrase memories in that bank." },
+
+            // --- TRACK SETTINGS ---
+            { category: "track_settings", title: "Adjusting Track Playback Level", description: "Press a [TRACK] button (it blinks green), then turn [VALUE] knob to adjust its playback volume.", source: "Parameter Guide p.11", context: "Individual track volume control is essential for mixing your loops. You can adjust levels even during playback for dynamic mixing." },
+            { category: "track_settings", title: "Playing Tracks Backward (Reverse)", description: "Press [REVERSE], then the desired [TRACK] button. Purple indicator means reverse playback.", source: "Parameter Guide p.11", context: "Reverse playback is a creative effect that can transform your loops. Note that you cannot overdub on a track set to reverse playback." },
+            { category: "track_settings", title: "Undo/Redo Recordings", description: "Press [UNDO/REDO], then the [TRACK] button. Orange for Undo, Red for Redo (overdub only).", source: "Parameter Guide p.11", context: "The undo/redo function provides a safety net for your recordings and overdubs. It allows you to quickly revert mistakes or toggle between different overdub layers." },
+            { category: "track_settings", title: "Loop vs. One-Shot Playback", description: "Press [LOOP/1 SHOT], then the [TRACK] button. Blue means One-Shot (plays once and stops).", source: "Parameter Guide p.11", context: "Loop mode is standard for continuous looping. One-Shot mode is great for triggering samples, sound effects, or vocal phrases that should play only once. In One-Shot, pressing [▶/■] retriggers playback from the start." },
+
+            // --- EFFECTS ---
+            { category: "effects", title: "Editing Input FX / Track FX", description: "Press a blinking FX button (1-8), turn [VALUE] for type, press [VALUE] for parameter, turn [VALUE] to adjust. For Track FX, select track with [TRACK] button.", source: "Parameter Guide p.16", topTip: true, context: "Input FX are applied *before* recording, shaping the sound that goes into your loop. Track FX are applied *during playback*, allowing real-time manipulation of existing loops. Experiment with both for diverse sound design." },
+            { category: "effects", title: "Understanding FX Indicators", description: "Blinking purple: Editing. Lit purple: On (knobs active). Lit red: On. Unlit: Off.", source: "Parameter Guide p.16", context: "The indicator lights provide quick visual feedback on the status of your effects, letting you know if an effect is active, being edited, or bypassed." },
+            { category: "effects", title: "Key FX Types for Looping", description: "Explore Delay, Reverb, Slicer, Beat Repeat, and Vinyl Flick for dynamic loop manipulation.", source: "Parameter Guide p.16-24", context: "These effects are particularly powerful for looping. Slicer and Beat Repeat can chop and re-arrange your loops rhythmically, while Vinyl Flick offers turntable-like stop/start effects. Delay and Reverb add space and depth." },
+            { category: "effects", title: "Pitch-Detection FX Limitations", description: "Effects like GUITAR TO BASS, PITCH BEND, ROBOT may not work correctly with chords or multiple tracks.", source: "Parameter Guide p.16", context: "These effects rely on monophonic pitch detection. For best results, use them on single-note melodies or isolated vocal lines. Applying them to complex harmonies can lead to undesirable artifacts." },
+
+            // --- RHYTHM SETTINGS ---
+            { category: "rhythm", title: "Adjusting Rhythm Volume", description: "In Bank Settings (RHYTHM), adjust 'LVL' (Rhythm Level) from 0-100 (default 50).", source: "Parameter Guide p.12", context: "Control the volume of the built-in rhythm guide to suit your performance needs. You might want it louder for practice and quieter for recording." },
+            { category: "rhythm", title: "Selecting Rhythm Pattern & Time Signature", description: "In Bank Settings (RHYTHM), select 'PTN' for pattern and 'BEAT' for time signature. Set BEAT *before* recording.", source: "Parameter Guide p.12", context: "The RC-202 offers various rhythm patterns (e.g., Rock, Shuffle, Funk). The time signature (e.g., 4/4, 3/4) is crucial and cannot be changed after recording the first track in a phrase memory." },
+            { category: "rhythm", title: "Rhythm Only to Headphones (Rhythm Line Out)", description: "In Bank Settings (RHYTHM), set 'LIN' to OFF to send rhythm only to PHONES jack.", source: "Parameter Guide p.12", context: "This is ideal for using the rhythm as a click track for yourself without sending it to the main outputs, which is common in live performance or studio recording." },
+            { category: "rhythm", title: "Recording/Playback Count-In", description: "In Bank Settings (RHYTHM), set 'REC' or 'PLY' to ON for a one-measure count-in before recording or playback.", source: "Parameter Guide p.12", context: "Count-ins help you start recordings and playback precisely in time, especially useful for complex arrangements or when playing with other musicians." },
+            { category: "rhythm", title: "Rhythm Stop Behavior", description: "In Bank Settings (RHYTHM), set 'STP' to LPR (stops with looper), REC (stops after first recording), or OFF (always plays).", source: "Parameter Guide p.12", context: "Customize how the rhythm track stops to fit your workflow. 'LPR' is common for synchronized stops, while 'REC' can be useful for initial track laying." },
+
+            // --- EXTERNAL CONTROL (CTL) ---
+            { category: "external_control", title: "Assigning Footswitches/Expression Pedals", description: "In Bank Settings (CTL), select CTL1, CTL2, or EXP. Then choose a 'CTL Target' (function) from 1-35.", source: "Parameter Guide p.25", topTip: true, context: "External control is vital for hands-free operation during live performance. You can assign nearly any function, from track record/play to effect parameter control, to a footswitch or expression pedal." },
+            { category: "external_control", title: "MIDI Control Change Assignments", description: "In Bank Settings (CTL), select CC80-CC84 as CTL Source to assign MIDI CC messages to functions.", source: "Parameter Guide p.25", context: "Integrate the RC-202 into a larger MIDI setup. You can control various parameters remotely from a MIDI controller or DAW, expanding your performance possibilities." },
+            { category: "external_control", title: "Common CTL Targets", description: "Assign 'Track 1/2 Rec/Play', 'Track Clear', 'Undo/Redo', 'Master Play/Stop', 'Tap Tempo', or FX knob control.", source: "Parameter Guide p.25", context: "These are some of the most useful assignments for live looping, allowing you to control essential functions without taking your hands off your instrument." },
+
+            // --- SYSTEM SETTINGS ---
+            { category: "system_settings", title: "I/O Settings (Output/Headphone Level, Phantom Power)", description: "In System Settings (I/O), adjust 'OLV' (Output Level), 'PLV' (Headphone Level), and 'P48' (Phantom Power ON/OFF).", source: "Parameter Guide p.9", context: "These global settings control the overall volume and input configuration. Always be cautious with phantom power, ensuring it's only ON for condenser microphones." },
+            { category: "system_settings", title: "MIDI Sync & Channel Settings", description: "In System Settings (MIDI), set 'SYN' (MIDI Sync) to AUTO/INT, 'SRC' (Sync Source) to USB/MID, and 'RCV'/'TRN' for MIDI channels.", source: "Parameter Guide p.9", context: "Proper MIDI setup ensures the RC-202 synchronizes correctly with other gear (DAW, drum machine, etc.). Omni Mode allows receiving on all channels." },
+            { category: "system_settings", title: "USB Mode (Mass Storage/Audio)", description: "In System Settings (USB), set 'MD' to 'MSG' for file transfer or 'AUD' for USB Audio/MIDI (requires driver).", source: "Parameter Guide p.10", context: "The USB port is versatile. 'MSG' mode is for managing WAV files on the device, while 'AUD' turns the RC-202 into an audio interface for your computer." },
+            { category: "system_settings", title: "Auto Off & Knob Lock", description: "In System Settings (GENERAL), disable 'AOF' (Auto Off) to prevent automatic power down. Use 'LOK' (Value Knob Lock) to prevent accidental changes.", source: "Parameter Guide p.10", context: "Customize these general settings for convenience and to prevent accidental interruptions during long sessions or performances." },
+            { category: "system_settings", title: "Quick Clear Function", description: "In System Settings (GENERAL), set 'CLR' to ON to allow double-clicking [■] to clear a track immediately.", source: "Parameter Guide p.10", context: "This is a handy shortcut for quickly clearing tracks, especially useful in fast-paced live situations where holding the button for 2 seconds might be too slow." },
+            { category: "system_settings", title: "Factory Reset Procedure", description: "Hold [SETUP] + [MEMORY] on power-up. Select ALL/SYS/B1-B8 with [VALUE] knob, then press [WRITE] to confirm.", source: "Parameter Guide p.13", context: "A factory reset can resolve many issues, but be aware that 'ALL' or 'B1-B8' options will erase all phrase memories. Back up your data before performing a full reset." },
+
+            // --- CONNECTIONS ---
+            { category: "connections", title: "Connecting Instruments & Mics", description: "Use INPUT INST (L/MONO, R) for instruments/effects, INPUT MIC for microphones (with phantom power option), and AUX IN for audio players.", source: "Owner's Manual p.6", topTip: true, context: "Proper connection ensures optimal signal flow. Remember to use L/MONO for single mono sources, and be mindful of phantom power requirements for your microphone." },
+            { category: "connections", title: "Outputting to Amps & Headphones", description: "Connect OUTPUT jacks (L/MONO, R) to your amp/monitors. Use PHONES jack for headphones.", source: "Owner's Manual p.6", context: "Ensure your output levels are appropriate for your monitoring system. Always turn down volumes before connecting/disconnecting to prevent damage." },
+            { category: "connections", title: "External Control Connections", description: "Connect expression pedals (EV-5, FV-500H/L) or footswitches (FS-5U, FS-7, FS-6) to the CTL 1, 2/EXP jack.", source: "Owner's Manual p.6", context: "These connections enable hands-free control, which is essential for dynamic live looping performances." },
+            { category: "connections", title: "MIDI & USB Connectivity", description: "Use MIDI IN/OUT for MIDI devices. USB connects to computer for mass storage or audio/MIDI.", source: "Owner's Manual p.6", context: "The RC-202 is a versatile hub. MIDI allows synchronization with other gear, while USB facilitates file management and acts as an audio interface." },
+
+            // --- TROUBLESHOOTING ---
+            { category: "troubleshooting", title: "No Sound / Low Volume Issues", description: "Check cables, connections, amp/mixer power/volume, and RC-202 levels (Track, Output, Headphone). Ensure tracks are recorded.", source: "Parameter Guide p.26", topTip: true, context: "This is the most common issue. Systematically check each point in the signal chain from input to output. Also verify if the rhythm line out is correctly set if rhythm is missing." },
+            { category: "troubleshooting", title: "Recording/Overdub Stops Early", description: "This indicates insufficient internal memory (E04 error). Delete unneeded phrase memories.", source: "Parameter Guide p.27", context: "The RC-202 has finite memory. Regularly manage your phrase memories, backing up and deleting old ones to free up space for new creations." },
+            { category: "troubleshooting", title: "Tempo Not Changing / MIDI Sync Issues", description: "If tempo is stuck, ensure recording/overdub is not in progress. If MIDI sync is AUTO, try setting to INTERNAL.", source: "Parameter Guide p.26", context: "Tempo can be locked during active recording. If using MIDI sync, ensure your external device is sending a stable clock or switch to internal tempo for manual control." },
+            { category: "troubleshooting", title: "Error Messages (E01-E99)", description: "Refer to the Error Message List for specific meanings and actions (e.g., E01: recording too long, E91: invalid file).", source: "Parameter Guide p.27", context: "Error messages provide crucial diagnostic information. Consult the manual's error list to quickly identify and resolve the problem, from memory issues to file format problems." },
+
+            // --- IMPORTANT NOTES ---
+            { category: "important_notes", title: "Automatic Saving & Data Backup", description: "The RC-202 saves automatically, but always back up important data via USB to your computer to prevent irretrievable loss.", source: "Owner's Manual p.8", topTip: true, context: "While convenient, automatic saving means destructive actions are permanent. Regular backups are your safety net against accidental deletion, malfunction, or power loss." },
+            { category: "important_notes", title: "Phantom Power Precautions", description: "Only use phantom power for condenser microphones that require it. Turn OFF for dynamic mics or other devices to prevent damage.", source: "Owner's Manual p.8", context: "Supplying phantom power to incompatible devices can cause serious damage. Always check your microphone's specifications before enabling this feature." },
+            { category: "important_notes", title: "Auto Off Function", description: "The unit powers off after 10 hours of inactivity. Disable 'Auto Off' in System Settings if you need continuous power.", source: "Owner's Manual p.7", context: "This power-saving feature is useful but can be inconvenient during long sessions. Adjust it in system settings to suit your workflow." },
+            { category: "important_notes", title: "Copyright and Usage Rights", description: "Unauthorized recording/copying of copyrighted works is forbidden. Roland permits use of content (except demos) for original musical works.", source: "Owner's Manual p.8", context: "Be mindful of intellectual property rights when creating and distributing music using the RC-202. Ensure your use of included content aligns with Roland's terms." }
+        ];
+
+        const rhythmPatternsData = [
+            { title: "P01 Rock 1", description: "Standard rock drum beat." },
+            { title: "P02 Rock 2", description: "Alternative rock drum beat." },
+            { title: "P03* Basic", description: "Simple, fundamental beat. (*Default)" },
+            { title: "P04 Pop", description: "Upbeat pop rhythm." },
+            { title: "P05 Dance", description: "Electronic dance beat." },
+            { title: "P06 Funk", description: "Groovy funk rhythm." },
+            { title: "P07 Jazz", description: "Swing jazz feel." },
+            { title: "P08 Shuffle", description: "Shuffling rhythm." },
+            { title: "P09 Waltz", description: "3/4 time signature waltz." },
+            { title: "P10 Latin", description: "Percussive Latin rhythm." },
+            { title: "P11 Groove Beat 1", description: "Modern electronic groove." },
+            { title: "P12 Groove Beat 2", description: "Another modern electronic groove." },
+            { title: "P13 Shuffle", description: "Another shuffling rhythm." },
+            { title: "P14 Pop", description: "Another pop rhythm." },
+            { title: "P15 Funk", description: "Another funk rhythm." },
+            { title: "P16 Fusion", description: "Complex, intricate rhythm." },
+            { title: "P17 Swing", description: "Swing rhythm." }
+        ];
+
+        const effectsListData = {
+            "LPF (Low Pass Filter)": { description: "A filter that cuts the region above the cutoff frequency.", params: ["Cutoff (Cut) ☑", "Resonance (Res)"], inputFX: true, trackFX: true },
+            "BPF (Band Pass Filter)": { description: "A filter that cuts only the region surrounding the cutoff frequency.", params: ["Cutoff (Cut) ☑", "Resonance (Res)"], inputFX: true, trackFX: true },
+            "HPF (High Pass Filter)": { description: "A filter that cuts the region below the cutoff frequency.", params: ["Cutoff (Cut) ☑", "Resonance (Res)"], inputFX: true, trackFX: true },
+            "PHASER": { description: "Gives the sound a swishing quality by adding a phase-shifted sound.", params: ["Depth (Dep)", "Resonance (Res)"], inputFX: true, trackFX: true },
+            "FLANGER": { description: "Produces a metallic resonance reminiscent of a jet airplane taking off and landing.", params: ["Depth (Dep)", "Feedback (Fb)"], inputFX: true, trackFX: true },
+            "SYNTH": { description: "Generates a synthesizer sound.", params: ["Type", "Pitch"], inputFX: true, trackFX: false },
+            "LO-FI": { description: "This effect intentionally degrades the sound to create a distinctive character.", params: ["Bit Depth (Dep)", "Sample Rate (Smp)"], inputFX: true, trackFX: true },
+            "RING MODULATOR": { description: "By applying amplitude modulation (AM) to the input signal, this allows you to produce bell-like sounds.", params: ["Frequency (Frq) ☑", "Depth (Dep)"], inputFX: true, trackFX: true },
+            "GUITAR TO BASS": { description: "Transforms a guitar sound into a bass sound.", params: ["Level", "Tone"], inputFX: true, trackFX: false },
+            "SLOW GEAR": { description: "Creates a volume-swell sound (violin technique).", params: ["Attack Time"], inputFX: true, trackFX: false },
+            "TRANSPOSE": { description: "Transposes the sound when you turn the FX on.", params: ["Transpose (Trn) ☑"], inputFX: true, trackFX: false },
+            "PITCH SHIFT": { description: "Lets you raise or lower the pitch while you perform.", params: ["Pitch (Pch) ☑", "Fine (Fin)"], inputFX: true, trackFX: false },
+            "ROBOT": { description: "Cyber-robot voice.", params: ["Gender", "Pitch"], inputFX: true, trackFX: false },
+            "VOCAL DIST": { description: "Distortion for vocals.", params: ["Drive", "Tone"], inputFX: true, trackFX: false },
+            "VOCODER": { description: "Vocoder sound that uses the audio input to modulate the sound of the track you specify.", params: ["Level", "Tone"], inputFX: true, trackFX: false },
+            "NATURAL COMP": { description: "Produces a natural compression effect (an effect that makes the volume more consistent).", params: ["Threshold", "Ratio"], inputFX: true, trackFX: false },
+            "HARD COMP": { description: "Produces a strong compression effect (an effect that makes the volume more consistent).", params: ["Threshold", "Ratio"], inputFX: true, trackFX: false },
+            "NATURAL LIM": { description: "Applies a natural limiter effect (an effect that limits the volume).", params: ["Threshold"], inputFX: true, trackFX: false },
+            "HARD LIM": { description: "Applies a strong limiter effect (an effect that limits the volume).", params: ["Threshold"], inputFX: true, trackFX: false },
+            "PHONE VOX": { description: "Gives the sound a character similar to a voice heard via telephone.", params: ["Tone", "Drive"], inputFX: true, trackFX: false },
+            "EQ": { description: "Adjusts the tone as an equalizer.", params: ["Low", "Mid", "High"], inputFX: true, trackFX: false },
+            "LOW ISOLATOR": { description: "An equalizer that cuts the volume of the low-frequency region.", params: ["Frequency", "Gain"], inputFX: true, trackFX: true },
+            "MID ISOLATOR": { description: "An equalizer that cuts the volume of the mid-frequency region.", params: ["Frequency", "Gain"], inputFX: true, trackFX: true },
+            "HIGH ISOLATOR": { description: "An equalizer that cuts the volume of the high-frequency region.", params: ["Frequency", "Gain"], inputFX: true, trackFX: true },
+            "OCTAVE": { description: "Adds a sound one octave (or two octaves) lower than the input, creating a sense of low-frequency depth.", params: ["Level", "Tone"], inputFX: true, trackFX: false },
+            "AUTO PAN": { description: "Cyclically varies the stereo position of the sound.", params: ["Rate", "Depth"], inputFX: true, trackFX: true },
+            "MANUAL PAN": { description: "Varies the stereo position of the sound.", params: ["Pan"], inputFX: true, trackFX: true },
+            "TREMOLO": { description: "Cyclically changes the volume.", params: ["Rate", "Depth"], inputFX: true, trackFX: true },
+            "SLICER": { description: "Repeatedly cuts the sound, transforming a conventional sound to create the impression of a rhythmic backing.", params: ["Pattern", "Rate"], inputFX: true, trackFX: true },
+            "DELAY": { description: "Adds a delayed sound to the direct sound, giving the sound greater depth or creating special effects.", params: ["Time (Tme) ☑", "Feedback (Fb)"], inputFX: true, trackFX: true },
+            "PANNING DELAY": { description: "Moves the delay sound alternately between left and right.", params: ["Time (Tme) ☑", "Feedback (Fb)"], inputFX: true, trackFX: true },
+            "TAPE ECHO": { description: "A virtual tape echo that produces a realistic tape delay sound.", params: ["Time (Tme) ☑", "Feedback (Fb)"], inputFX: true, trackFX: true },
+            "GRANULAR DELAY": { description: "Repeats the input sound at short intervals, producing an oscillator-like sound.", params: ["Time (Tme) ☑", "Density"], inputFX: true, trackFX: true },
+            "ROLL": { description: "Loops the sound in a short interval.", params: ["Length (Len) ☑", "Rate"], inputFX: true, trackFX: true },
+            "CHORUS": { description: "In this effect, a slightly detuned sound is added to the original sound to add depth and breadth.", params: ["Rate", "Depth"], inputFX: true, trackFX: true },
+            "REVERB": { description: "Adds reverberation to the sound.", params: ["Time (Tme)", "E. Level (ELv) ☑"], inputFX: true, trackFX: true },
+            "BEAT REPEAT": { description: "Plays the track repeatedly in time with the beat.", params: ["Length (Len) ☑"], inputFX: false, trackFX: true },
+            "BEAT SHIFT": { description: "The track will play shifted by the length of the beat.", params: ["Length (Len) ☑"], inputFX: false, trackFX: true },
+            "BEAT SCATTER": { description: "The track will be scrubbed in time with the beat.", params: ["Length (Len) ☑"], inputFX: false, trackFX: true },
+            "VINYL FLICK": { description: "The track will sound as though you are touching the turntable.", params: ["Flick (Flc) ☑"], inputFX: false, trackFX: true }
+        };
+
+        const externalControlData = [
+            { target: "OFF", description: "No assignment target." },
+            { target: "1", description: "Switches track 1 between record/play." },
+            { target: "2", description: "Switches track 2 between record/play." },
+            { target: "3", description: "Switches track 1 between play/stop." },
+            { target: "4", description: "Switches track 2 between play/stop." },
+            { target: "5", description: "Clears track 1." },
+            { target: "6", description: "Clears track 2." },
+            { target: "7", description: "Executes undo/redo for track 1." },
+            { target: "8", description: "Executes undo/redo for track 2." },
+            { target: "9", description: "Adjusts the volume (playback level) of track 1." },
+            { target: "10", description: "Adjusts the volume (playback level) of track 2." },
+            { target: "11", description: "Switches between record/play for the target track." },
+            { target: "12", description: "Stops the target track." },
+            { target: "13", description: "Clears the target track." },
+            { target: "14", description: "Executes undo/redo for the target track." },
+            { target: "15", description: "Adjusts the volume of the target track." },
+            { target: "16", description: "Allows simultaneous play/stop of all tracks." },
+            { target: "17", description: "Executes undo/redo (global)." },
+            { target: "18", description: "Plays/stops the rhythm." },
+            { target: "19", description: "Adjusts the volume of the rhythm." },
+            { target: "20", description: "Sets tempo by tapping (tap tempo)." },
+            { target: "21", description: "Adjusts the volume of the master compressor." },
+            { target: "22", description: "Adjusts the volume of the master reverb." },
+            { target: "23", description: "Switches the target track." },
+            { target: "24", description: "Switches to the next phrase memory." },
+            { target: "25", description: "Switches to the previous phrase memory." },
+            { target: "26", description: "Adjusts the input volume of the INPUT jacks." },
+            { target: "27", description: "Adjusts the output volume of the OUTPUT jacks." },
+            { target: "28", description: "Adjusts the volume of the headphones." },
+            { target: "29", description: "Adjusts the volume of track 1 in the range of 0-playback level." },
+            { target: "30", description: "Adjusts the volume of track 2 in the range of 0-playback level." },
+            { target: "31", description: "Adjusts the volume balance of tracks 1 and 2." },
+            { target: "32", description: "Controls the parameter assigned to the [INPUT FX] knob." },
+            { target: "33", description: "Controls the parameter assigned to the [TRACK FX] knob." },
+            { target: "34", description: "Switches to the next memory within the bank." },
+            { target: "35", description: "Switches to the previous memory within the bank." }
+        ];
+
+        const systemShortcutsData = [
+            { combo: "SETUP + MEMORY (Hold)", description: "Access Factory Reset menu.", category: "System" },
+            { combo: "VALUE (Press & Turn)", description: "Fine-tune parameter values.", category: "Global" },
+            { combo: "RHYTHM START/STOP (Long Press)", description: "Access Rhythm settings menu.", category: "Rhythm" },
+            { combo: "TRACK (Button) + VALUE (Knob)", description: "Adjust individual track playback level.", category: "Track" },
+            { combo: "UNDO/REDO (Button) + TRACK (Button)", description: "Perform Undo/Redo for a specific track.", category: "Track" },
+            { combo: "MEMORY (Button) + VALUE (Knob, Press & Turn)", description: "Select bank in Play screen.", category: "Phrase Memory" },
+            { combo: "WRITE (Hold)", description: "Enter Delete Phrase Memory mode.", category: "Phrase Memory" },
+            { combo: "REC + PLAY", description: "Start recording on selected track.", category: "Basic Operations" },
+            { combo: "■ (Hold)", description: "Clear selected track.", category: "Basic Operations" },
+            { combo: "■ (Double Click, if Quick Clear ON)", description: "Quickly clear selected track.", category: "System" },
+            { combo: "P. SHIFT-DELAY (FX Button) + VALUE (Knob)", description: "Select FX type.", category: "Effects" },
+            { combo: "P. SHIFT-DELAY (FX Button) + VALUE (Knob, Press)", description: "Select FX parameter.", category: "Effects" },
+            { combo: "SETUP (EXIT) Button", description: "Exit current menu/setting screen.", category: "Global" }
+        ];
+
+
+        let currentCategory = 'all';
+        let currentTip = null;
+
+        // DOM Elements
+        const tipsContainer = document.getElementById('tips-container');
+        const topTipsContainer = document.getElementById('top-tips-container');
+        const categoryFilterContainer = document.getElementById('category-filter-container');
+        const closeModalButton = document.getElementById('close-modal');
+        const tipModal = document.getElementById('tip-modal');
+        const mainTipView = document.getElementById('main-tip-view');
+        const modalTitle = document.getElementById('modal-title');
+        const modalDescription = document.getElementById('modal-description');
+        const modalSource = document.getElementById('modal-source');
+        const copyTipButton = document.getElementById('copy-tip-button');
+        const moreInfoButton = document.getElementById('more-info-button');
+        const detailsView = document.getElementById('details-view');
+        const detailsTitle = document.getElementById('details-title');
+        const detailsContent = document.getElementById('details-content');
+        const backToTipButton = document.getElementById('back-to-tip-button');
+        const detailsRelatedList = document.getElementById('related-tips-list');
+        const suggestedTipContainer = document.getElementById('suggested-tip-container');
+        const suggestedTipBoxContent = document.getElementById('suggested-tip-box-content');
+        // Removed searchInput and searchButton
+        const downloadPdfButton = document.getElementById('download-pdf-button');
+
+        // Header Modal Buttons and Content Areas
+        const rhythmPatternsButton = document.getElementById('rhythm-patterns-button');
+        const rhythmPatternsModal = document.getElementById('rhythm-patterns-modal');
+        const closeRhythmPatternsModalButton = document.getElementById('close-rhythm-patterns-modal');
+        const rhythmPatternsContent = document.getElementById('rhythm-patterns-content');
+
+        const effectsListButton = document.getElementById('effects-list-button');
+        const effectsListModal = document.getElementById('effects-list-modal');
+        const closeEffectsListModalButton = document.getElementById('close-effects-list-modal');
+        const effectsListContainer = document.getElementById('effects-list-container');
+        const effectsSearchInput = document.getElementById('effects-search-input');
+
+        const externalControlButton = document.getElementById('external-control-button');
+        const externalControlModal = document.getElementById('external-control-modal');
+        const closeExternalControlModalButton = document.getElementById('close-external-control-modal');
+        const externalControlContainer = document.getElementById('external-control-container');
+
+        const systemShortcutsButton = document.getElementById('system-shortcuts-button');
+        const systemShortcutsModal = document.getElementById('system-shortcuts-modal');
+        const closeSystemShortcutsModalButton = document.getElementById('close-system-shortcuts-modal');
+        const systemShortcutsContainer = document.getElementById('system-shortcuts-container');
+
+
+        // --- HELPER FUNCTIONS ---
+        const getIconHtml = (categoryKey) => {
+            return categories[categoryKey] ? `<i class="${categories[categoryKey].icon} mr-2"></i>` : '';
+        };
+
+        // --- DISPLAY FUNCTIONS ---
+        const displayTips = (filter = 'all', searchTerm = '') => {
+            tipsContainer.innerHTML = '';
+            topTipsContainer.innerHTML = '';
+            const lowerCaseSearchTerm = searchTerm.toLowerCase();
+            const filteredTips = tipsData.filter(tip => {
+                const categoryMatch = (filter === 'all' || tip.category === filter);
+                // Search functionality removed from main display, but kept for effects modal search
+                const searchMatch = true; // Always true if no main search input
+                
+                return categoryMatch && searchMatch;
+            });
+            
+            filteredTips.forEach(tip => {
+                const card = document.createElement('div');
+                card.className = 'card p-6 cursor-pointer';
+                card.innerHTML = `
+                    <div class="flex-grow">
+                        <h4 class="text-xl font-bold mb-2 flex items-center">${getIconHtml(tip.category)} ${tip.title}</h4>
+                        <p class="text-gray-400">${tip.description}</p>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-4 self-start">${categories[tip.category].name}</p>
+                `;
+                card.onclick = () => openModal(tip);
+
+                if (tip.topTip) {
+                    topTipsContainer.appendChild(card);
+                } else {
+                    tipsContainer.appendChild(card);
+                }
+            });
+        };
+
+        const setupCategoryFilters = () => {
+            categoryFilterContainer.innerHTML = '';
+            const allButton = document.createElement('button');
+            allButton.className = 'tip-category-button active';
+            allButton.textContent = 'All';
+            allButton.dataset.category = 'all';
+            categoryFilterContainer.appendChild(allButton);
+            
+            for (const key in categories) {
+                const button = document.createElement('button');
+                button.className = 'tip-category-button';
+                button.innerHTML = `<i class="${categories[key].icon} mr-2"></i> ${categories[key].name}`;
+                button.dataset.category = key;
+                categoryFilterContainer.appendChild(button);
+            }
+            categoryFilterContainer.addEventListener('click', (e) => {
+                if (e.target.tagName === 'BUTTON' || e.target.closest('button')) {
+                    const button = e.target.closest('button');
+                    currentCategory = button.dataset.category;
+                    document.querySelectorAll('.tip-category-button').forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    displayTips(currentCategory, ''); // No search term from main input
+                }
+            });
+        };
+
+        // --- MODAL LOGIC ---
+        const openModal = (tip) => {
+            currentTip = tip;
+            
+            mainTipView.style.display = 'block';
+            detailsView.style.display = 'none';
+            
+            modalTitle.textContent = tip.title;
+            modalDescription.textContent = tip.description;
+            modalSource.textContent = tip.source ? `Source: ${tip.source}` : '';
+            tipModal.classList.remove('hidden');
+        };
+
+        const showDetailsView = () => {
+            mainTipView.style.display = 'none';
+            detailsView.style.display = 'block';
+            detailsView.classList.add('details-view');
+            detailsTitle.textContent = currentTip.title;
+            detailsContent.innerHTML = `<p>${currentTip.context}</p>`;
+
+            // Populate related tips
+            detailsRelatedList.innerHTML = '';
+            if (currentTip.related && currentTip.related.length > 0) {
+                document.getElementById('related-tips-container').style.display = 'block';
+                currentTip.related.forEach(relatedTitle => {
+                    const relatedTip = tipsData.find(t => t.title === relatedTitle);
+                    if (relatedTip) {
+                        const tipEl = document.createElement('div');
+                        tipEl.className = 'related-tip-box';
+                        tipEl.innerHTML = `<strong>${relatedTip.title}:</strong> ${relatedTip.description}`;
+                        tipEl.onclick = () => {
+                            // Close current modal and open the new one
+                            tipModal.classList.add('hidden');
+                            setTimeout(() => openModal(relatedTip), 50);
+                        };
+                        detailsRelatedList.appendChild(tipEl);
+                    }
+                });
+            } else {
+                document.getElementById('related-tips-container').style.display = 'none';
+            }
+
+            // Populate suggested tip (random from remaining tips)
+            const remainingTips = tipsData.filter(t => t !== currentTip && (!currentTip.related || !currentTip.related.includes(t.title)));
+            if (remainingTips.length > 0) {
+                document.getElementById('suggested-tip-container').style.display = 'block';
+                const suggestedTip = remainingTips[Math.floor(Math.random() * remainingTips.length)];
+                const suggestedTipEl = document.createElement('div');
+                suggestedTipEl.className = 'suggested-tip-box';
+                suggestedTipEl.innerHTML = `<strong>${suggestedTip.title}:</strong> ${suggestedTip.description}`;
+                suggestedTipEl.onclick = () => {
+                    tipModal.classList.add('hidden');
+                    setTimeout(() => openModal(suggestedTip), 50);
+                };
+                suggestedTipBoxContent.innerHTML = ''; // Clear previous content
+                suggestedTipBoxContent.appendChild(suggestedTipEl);
+            } else {
+                document.getElementById('suggested-tip-container').style.display = 'none';
+            }
+        };
+
+        const hideDetailsView = () => {
+            mainTipView.style.display = 'block';
+            detailsView.style.display = 'none';
+            detailsView.classList.remove('details-view');
+        };
+
+        const closeModal = () => {
+            tipModal.classList.add('hidden');
+            hideDetailsView();
+        };
+
+        // --- OTHER MODAL POPULATION ---
+        const populateRhythmPatterns = () => {
+            rhythmPatternsContent.innerHTML = rhythmPatternsData.map(pattern => `
+                <div class="tip-item mb-4">
+                    <h4 class="text-xl font-bold text-white">${pattern.title}</h4>
+                    <p>${pattern.description}</p>
+                </div>
+            `).join('');
+        };
+
+        const populateEffectsList = (searchTerm = '') => {
+            const lowerCaseSearchTerm = searchTerm.toLowerCase();
+            effectsListContainer.innerHTML = Object.entries(effectsListData)
+                .filter(([name, data]) => name.toLowerCase().includes(lowerCaseSearchTerm) ||
+                                         data.description.toLowerCase().includes(lowerCaseSearchTerm) ||
+                                         data.params.some(p => p.toLowerCase().includes(lowerCaseSearchTerm)))
+                .map(([name, data]) => `
+                    <div class="tip-item mb-4">
+                        <h4 class="text-xl font-bold text-white">${name}</h4>
+                        <p class="text-sm text-gray-400 mb-2">Input FX: ${data.inputFX ? '✔' : '☐'} | Track FX: ${data.trackFX ? '✔' : '☐'}</p>
+                        <p>${data.description}</p>
+                        ${data.params.length > 0 ? `<p class="text-sm text-gray-500 mt-2">Parameters: ${data.params.join(', ')}</p>` : ''}
+                    </div>
+                `).join('');
+        };
+        
+        const populateExternalControl = () => {
+            externalControlContainer.innerHTML = `
+                <table class="combo-table">
+                    <thead>
+                        <tr>
+                            <th>Target Value</th>
+                            <th>Function Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${externalControlData.map(item => `
+                            <tr>
+                                <td><span class="combo-key">${item.target}</span></td>
+                                <td>${item.description}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        };
+
+        const populateSystemShortcuts = () => {
+            systemShortcutsContainer.innerHTML = `
+                <table class="combo-table">
+                    <thead>
+                        <tr>
+                            <th>Combination/Setting</th>
+                            <th>Action/Explanation</th>
+                            <th>Category</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${systemShortcutsData.map(shortcut => `
+                            <tr>
+                                <td><span class="combo-key">${shortcut.combo.replace(/\+/g, '+</span> <span class="combo-key">')}</span></td>
+                                <td>${shortcut.description}</td>
+                                <td>${shortcut.category}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        };
+
+        // --- PDF DOWNLOAD ---
+        const downloadPdf = () => {
+            const doc = new jsPDF();
+            
+            let y = 15;
+            const pageHeight = doc.internal.pageSize.height;
+            const margin = 10;
+            doc.setFontSize(22);
+            doc.text("Charles Paris RC-202 Loop Station Guide", margin, y);
+            y += 15;
+            doc.setFontSize(10);
+            doc.text("Comprehensive Parameter and Operation Guide", margin, y);
+            y += 20;
+
+            tipsData.forEach(tip => {
+                if (y > pageHeight - 30) {
+                    doc.addPage();
+                    y = 15;
+                }
+                doc.setFontSize(14);
+                doc.setFont(undefined, 'bold');
+                doc.text(`${tip.title} (${categories[tip.category].name})`, margin, y);
+                y += 8;
+                doc.setFontSize(10);
+                doc.setFont(undefined, 'normal');
+                const descLines = doc.splitTextToSize(tip.description, doc.internal.pageSize.width - 2 * margin);
+                doc.text(descLines, margin + 5, y);
+                y += descLines.length * 5 + 5;
+                if (tip.context) {
+                    const contextLines = doc.splitTextToSize(`Context: ${tip.context}`, doc.internal.pageSize.width - 2 * margin);
+                    doc.text(contextLines, margin + 5, y, { fontStyle: 'italic' });
+                    y += contextLines.length * 5 + 5;
+                }
+                y += 5; // Extra space between tips
+            });
+            doc.save('rc202-charles-paris-guide.pdf');
+        };
+
+        // --- EVENT LISTENERS ---
+        closeModalButton.addEventListener('click', closeModal);
+        tipModal.addEventListener('click', (e) => {
+            if (e.target === tipModal) closeModal();
+        });
+        
+        moreInfoButton.addEventListener('click', showDetailsView);
+        backToTipButton.addEventListener('click', hideDetailsView);
+        copyTipButton.addEventListener('click', () => {
+            if (!currentTip) return;
+            const textToCopy = `${currentTip.title}\n\n${currentTip.description}\n\n${currentTip.context ? 'Context: ' + currentTip.context : ''}`;
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            // Optional: Provide visual feedback that text was copied
+            alert('Tip copied to clipboard!'); // Using alert for simplicity, replace with custom modal if desired
+        });
+
+        // Setup header modal toggles
+        const setupModalToggle = (button, modal, closeButton, populateFn) => {
+            button.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                if (populateFn) populateFn();
+            });
+            closeButton.addEventListener('click', () => modal.classList.add('hidden'));
+            modal.addEventListener('click', (e) => {
+                if(e.target === modal) modal.classList.add('hidden');
+            });
+        };
+
+        setupModalToggle(rhythmPatternsButton, rhythmPatternsModal, closeRhythmPatternsModalButton, populateRhythmPatterns);
+        setupModalToggle(effectsListButton, effectsListModal, closeEffectsListModalButton, populateEffectsList);
+        setupModalToggle(externalControlButton, externalControlModal, closeExternalControlModalButton, populateExternalControl);
+        setupModalToggle(systemShortcutsButton, systemShortcutsModal, closeSystemShortcutsModalButton, populateSystemShortcuts);
+
+        // Search functionality for effects modal only
+        effectsSearchInput.addEventListener('input', () => populateEffectsList(effectsSearchInput.value));
+
+        downloadPdfButton.addEventListener('click', downloadPdf);
+
+        // Initial display
+        setupCategoryFilters();
+        displayTips();
+    });
+    </script>
+</body>
+</html>
