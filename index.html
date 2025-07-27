@@ -3,21 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charles Paris Music: The Ultimate OP-1 Field Guide</title>
+    <title>Charles Paris RC-202 Loop Station Guide: Ultimate Edition</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Master your Teenage Engineering OP-1 Field with this comprehensive guide by Charles Paris Music. Explore essential tips, advanced techniques, workflow hacks, and detailed explanations for the synth engines, drum sampler, tape recorder, effects, and sequencers. Your go-to resource for all things OP-1 Field.">
-    <meta name="keywords" content="OP-1 Field, Teenage Engineering, OP-1 Guide, OP-1 Tutorial, OP-1 Tips, Synthesizer, Sampler, Tape Recorder, Sequencer, FX, LFO, Music Production, Portable Synth, Sound Design, Workflow, Charles Paris Music, Charles Paris, OP-1 Field guide by Charles Paris">
+    <meta name="description" content="Master your BOSS RC-202 Loop Station with this comprehensive guide by Charles Paris Music. Explore essential tips, advanced techniques, workflow hacks, and detailed explanations for recording, effects, rhythm, and system settings.">
+    <meta name="keywords" content="BOSS RC-202, Loop Station, RC-202 Guide, RC-202 Tutorial, RC-202 Tips, Looper, Effects, Rhythm, MIDI, USB, Music Production, Live Looping, Charles Paris Music">
     
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <!-- jsPDF library for PDF generation -->
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         
         :root {
             --op1-bg: #1a1a1a;
@@ -95,8 +92,20 @@
         .close-button:hover {
             color: #FF8888;
         }
-        /* Removed .search-input and .search-button styles as they are no longer used */
-        #download-pdf-button, .more-info-button, #back-to-tip-button {
+        .search-input {
+            background-color: var(--op1-bg);
+            border: 1px solid var(--op1-muted);
+            color: #F0F0F0;
+            padding: 14px 20px;
+            border-radius: 10px;
+            outline: none;
+            width: 100%;
+            max-width: 450px;
+        }
+        .search-input::placeholder {
+            color: var(--op1-text-dark);
+        }
+        .search-button, #download-pdf-button, .more-info-button, #back-to-tip-button {
             background-color: var(--op1-accent-blue);
             color: #ffffff;
             padding: 12px 22px;
@@ -111,7 +120,7 @@
             justify-content: center;
             gap: 0.5rem;
         }
-        #download-pdf-button:hover, .more-info-button:hover, #back-to-tip-button:hover {
+        .search-button:hover, #download-pdf-button:hover, .more-info-button:hover, #back-to-tip-button:hover {
             background-color: var(--op1-accent-hover);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
         }
@@ -185,35 +194,26 @@
         }
         .details-view { animation: fadeIn 0.3s ease-in-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        /* Custom centering for header buttons */
-        .header-buttons-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Centers the buttons */
-            gap: 1rem; /* Space between buttons */
-            width: 100%;
-        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col items-center px-4">
 
     <header class="w-full max-w-6xl text-center mb-12 flex flex-col items-center">
         <div class="w-full flex flex-col md:flex-row justify-center items-center gap-4 mb-6">
-            <div class="header-buttons-container">
-                <button id="op1-licks-button" class="header-button"><i class="fa-solid fa-lightbulb mr-2"></i>OP-1 Licks</button>
+            <div class="flex flex-wrap justify-center gap-2">
+                <button id="rhythm-patterns-button" class="header-button"><i class="fa-solid fa-drum mr-2"></i>Rhythm Patterns</button>
                 <button id="effects-list-button" class="header-button"><i class="fas fa-sliders mr-2"></i>FX List</button>
-                <button id="sequencers-button" class="header-button"><i class="fas fa-wave-square mr-2"></i>Sequencers</button>
-                <button id="shortcuts-button" class="header-button"><i class="fas fa-keyboard mr-2"></i>Shortcuts</button>
+                <button id="external-control-button" class="header-button"><i class="fas fa-gamepad mr-2"></i>External Control</button>
+                <button id="system-shortcuts-button" class="header-button"><i class="fas fa-keyboard mr-2"></i>System Shortcuts</button>
             </div>
         </div>
 
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl main-title mb-4">Charles Paris OP-1 Field Guide</h1>
-        <p class="text-lg sm:text-xl lg:text-2xl text-gray-300">Your pocket companion for the portable wonder.</p>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl main-title mb-4">Charles Paris RC-202 Loop Station Guide</h1>
+        <p class="text-lg sm:text-xl lg:text-2xl text-gray-300">Your ultimate companion for the BOSS RC-202.</p>
     </header>
 
     <main class="w-full max-w-6xl">
-        <!-- Search input and button removed -->
+        <!-- Removed search input and button -->
         <section class="mb-16 p-6 bg-[#1E1E1E] rounded-lg shadow-xl">
             <h2 class="text-3xl font-bold text-white mb-6 text-center">Essential Tips to Get You Started <i class="fa-solid fa-bolt tip-icon"></i></h2>
             <div id="top-tips-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
@@ -263,12 +263,12 @@
         </div>
     </div>
     
-    <!-- OP-1 Licks Modal -->
-    <div id="op1-licks-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
+    <!-- Rhythm Patterns Modal -->
+    <div id="rhythm-patterns-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
         <div class="modal-content w-full max-w-4xl p-8 relative overflow-y-auto max-h-[90vh]">
-            <button id="close-op1-licks-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
-            <h3 class="text-4xl font-semibold mb-6"><i class="fa-solid fa-lightbulb mr-3"></i>OP-1 Licks: 35 Patterns & Ideas</h3>
-            <div id="op1-licks-content" class="text-lg leading-relaxed"></div>
+            <button id="close-rhythm-patterns-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
+            <h3 class="text-4xl font-semibold mb-6"><i class="fa-solid fa-drum mr-3"></i>RC-202 Rhythm Patterns</h3>
+            <div id="rhythm-patterns-content" class="text-lg leading-relaxed"></div>
         </div>
     </div>
     
@@ -276,35 +276,35 @@
     <div id="effects-list-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
         <div class="modal-content w-full max-w-4xl p-8 relative overflow-y-auto max-h-[90vh]">
             <button id="close-effects-list-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
-            <h3 class="text-4xl font-semibold mb-6">FX List</h3>
+            <h3 class="text-4xl font-semibold mb-6">RC-202 FX List</h3>
             <input type="search" id="effects-search-input" placeholder="Search effects..." class="search-input mb-6 w-full">
             <div id="effects-list-container" class="text-lg leading-relaxed"></div>
         </div>
     </div>
     
-    <!-- Sequencers Modal -->
-    <div id="sequencers-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
+    <!-- External Control Modal -->
+    <div id="external-control-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
         <div class="modal-content w-full max-w-4xl p-8 relative overflow-y-auto max-h-[90vh]">
-            <button id="close-sequencers-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
-            <h3 class="text-4xl font-semibold mb-6">Sequencer Guide</h3>
-            <div id="sequencers-container" class="text-lg leading-relaxed"></div>
+            <button id="close-external-control-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
+            <h3 class="text-4xl font-semibold mb-6">External Control Assignments</h3>
+            <div id="external-control-container" class="text-lg leading-relaxed"></div>
         </div>
     </div>
 
-    <!-- Shortcuts Modal -->
-    <div id="shortcuts-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
+    <!-- System Shortcuts Modal -->
+    <div id="system-shortcuts-modal" class="modal fixed inset-0 flex items-center justify-center p-4 hidden">
         <div class="modal-content w-full max-w-4xl p-8 relative overflow-y-auto max-h-[90vh]">
-            <button id="close-shortcuts-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
-            <h3 class="text-4xl font-semibold mb-6">Button Combos & Shortcuts</h3>
-            <div id="shortcuts-container" class="text-sm leading-relaxed"></div>
+            <button id="close-system-shortcuts-modal" class="close-button absolute top-4 right-4 z-10">&times;</button>
+            <h3 class="text-4xl font-semibold mb-6">System Settings & Shortcuts</h3>
+            <div id="system-shortcuts-container" class="text-sm leading-relaxed"></div>
         </div>
     </div>
 
     <footer class="w-full max-w-6xl text-center text-gray-500">
-        <p class="mb-4">OP-1 Field Guide by <a href="https://www.charlesparis.com" target="_blank" class="font-bold footer-link">Charles Paris Music</a></p>
+        <p class="mb-4">RC-202 Guide by <a href="https://www.charlesparis.com" target="_blank" class="font-bold footer-link">Charles Paris Music</a></p>
         <div class="flex justify-center items-center gap-6 text-2xl">
-            <a href="https://teenage.engineering" target="_blank" class="footer-link"><i class="fas fa-globe"></i></a>
-            <a href="https://www.youtube.com/c/teenageengineering" target="_blank" class="footer-link"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.boss.info/us/" target="_blank" class="footer-link"><i class="fas fa-globe"></i></a>
+            <a href="https://www.youtube.com/user/BOSSchannel" target="_blank" class="footer-link"><i class="fab fa-youtube"></i></a>
         </div>
     </footer>
 
@@ -314,153 +314,201 @@
         const { jsPDF } = window.jspdf;
 
         const categories = {
-            concepts: { name: "Concepts", icon: 'fa-solid fa-lightbulb' },
-            synth: { name: "Synth", icon: 'fa-solid fa-wave-square' },
-            drum: { name: "Drum", icon: 'fa-solid fa-drum' },
-            tape: { name: "Tape", icon: 'fa-solid fa-tape' },
-            mixer: { name: "Mixer", icon: 'fa-solid fa-sliders' },
-            sequencer: { name: "Sequencer", icon: 'fa-solid fa-border-all' },
+            basic_operations: { name: "Basic Operations", icon: 'fa-solid fa-play' },
+            phrase_memories: { name: "Phrase Memories", icon: 'fa-solid fa-memory' },
+            track_settings: { name: "Track Settings", icon: 'fa-solid fa-layer-group' },
             effects: { name: "Effects", icon: 'fa-solid fa-magic-sparkles' },
-            sampling: { name: "Sampling", icon: 'fa-solid fa-microphone-lines' },
-            midi_connectivity: { name: "MIDI & Connectivity", icon: 'fa-solid fa-link' },
-            pro_tips: { name: "Pro Tips", icon: 'fa-solid fa-star' }
+            rhythm: { name: "Rhythm", icon: 'fa-solid fa-drum' },
+            external_control: { name: "External Control", icon: 'fa-solid fa-gamepad' },
+            system_settings: { name: "System Settings", icon: 'fa-solid fa-gear' },
+            connections: { name: "Connections", icon: 'fa-solid fa-plug' },
+            troubleshooting: { name: "Troubleshooting", icon: 'fa-solid fa-triangle-exclamation' },
+            important_notes: { name: "Important Notes", icon: 'fa-solid fa-circle-info' }
         };
 
         const tipsData = [
-            // --- CONCEPTS ---
-            { category: "concepts", title: "The Four Main Modes", description: "The OP-1 workflow is built around four main modes: Synth, Drum, Tape, and Mixer. Press their dedicated keys to switch between them.", source: "Manual p.10", topTip: true, context: "This is the core concept of the OP-1. You select a sound in Synth or Drum mode, record your performance as audio onto the Tape, and then use the Mixer to balance the levels and add master effects. Understanding this signal flow is key to making music on the OP-1.", related: ["Recording to Tape", "Sound Path Overview"] },
-            { category: "concepts", title: "Automatic Saving", description: "The OP-1 Field automatically saves your work. There is no 'Save' button. When you power off and on again, everything will be exactly as you left it.", source: "Manual p.8", context: "This feature encourages a fluid, creative process. You don't have to interrupt your flow to save. However, it also means that destructive actions (like recording over tape) are permanent, so be mindful of your work. Use the 'Lift' and 'Drop' tape functions to back up sections before making big changes.", related: ["Lifting and Dropping Audio", "Factory Reset"] },
-            { category: "concepts", title: "Using the Help Key", description: "The Help key (speech bubble) is your best friend. Press it in combination with any other key to see a quick overlay explaining that key's function in the current context.", source: "Manual p.12", context: "Instead of memorizing every function, use the Help key to learn contextually. For a deeper dive, press SHIFT + HELP to access the full built-in user guide." },
-            { category: "concepts", title: "Sound Path Overview", description: "To see a visual representation of the entire signal flow, press SHIFT + MIXER. This shows how your sound travels from the synth/drum engine, through effects, to tape, and out to the master.", source: "Manual p.84", context: "This screen is invaluable for troubleshooting. If you can't hear something, check the Sound Path screen. A warning symbol will light up on any part of the chain where the level is set to zero, helping you quickly identify the problem." },
-            
-            // --- SYNTH ---
-            { category: "synth", title: "Changing Synth Engines", description: "To select a different synth engine, press SHIFT + T1. Use the Blue encoder to scroll through the list of engines and press T1 or tap the encoder to confirm.", source: "Manual p.18", topTip: true, context: "The T1-T4 keys correspond to the four main pages for any sound. T1 is always the sound engine itself. Holding SHIFT while pressing these keys opens up deeper options, like changing the entire engine or LFO type.", related: ["Loading a Full Preset", "ADSR Envelope"] },
-            { category: "synth", title: "Loading a Full Preset", description: "To load a complete sound preset (Engine, Envelope, FX, and LFO), hold SHIFT and press one of the preset keys (1-8). Use the Blue encoder for engine type and Ochre for the preset.", source: "Manual p.16", context: "This is different from just changing the engine (SHIFT + T1). Loading a preset changes all four modules at once, giving you a fully-formed sound instantly. It's the fastest way to explore new sounds." },
-            { category: "synth", title: "ADSR Envelope", description: "Press T2 in Synth mode to access the ADSR (Attack, Decay, Sustain, Release) envelope. This shapes the volume of your sound over time.", source: "Manual p.38", context: "A short attack is good for percussive sounds, while a long attack creates a swelling pad. The envelope is fundamental to sound design and turning a raw oscillator into a musical instrument.", related: ["Play Mode Settings"] },
-            { category: "synth", title: "Play Mode Settings", description: "In the Envelope screen (T2), press SHIFT to access Play Mode settings. Here you can change from Polyphonic to Mono, and adjust Portamento (glide between notes).", source: "Manual p.39", context: "These settings dramatically change how a patch responds to your playing. Use Mono with Portamento for classic sliding lead lines, or Poly for playing chords." },
-            { category: "synth", title: "Modulating with an LFO", description: "Press T4 to activate the LFO (Low Frequency Oscillator) for a sound. Press SHIFT + T4 to change the LFO type and its destination.", source: "Manual p.50", context: "The LFO is the key to adding movement and life to your sounds. You can assign it to almost any parameter, like filter cutoff, pitch, or an effect parameter. Subtle LFO modulation can make a static sound feel organic and dynamic.", related: ["Using Effects (FX)"] },
+            // --- BASIC OPERATIONS ---
+            { category: "basic_operations", title: "Power On/Off Safely", description: "Always turn your amp off first before powering off the RC-202. Never power off during recording or data transfer to avoid data loss.", source: "Owner's Manual p.7", topTip: true, context: "Proper power cycling prevents potential data corruption or hardware issues. The RC-202 automatically saves your work, but abrupt power loss during active operations can still lead to problems.", related: ["Automatic Saving (System)"] },
+            { category: "basic_operations", title: "Adjusting Input Levels", description: "Set the [MIC LEVEL] knob so the PEAK indicator occasionally lights orange. Green is low, Red is excessive.", source: "Owner's Manual p.6", context: "Optimal input levels are crucial for clean recordings. Too low, and your loops will be noisy; too high, and they'll clip and distort. Aim for the orange indicator for a healthy signal." },
+            { category: "basic_operations", title: "Setting Tempo (Tap Tempo)", description: "Tap the [TAP TEMPO] button multiple times to set the tempo. Turn the [VALUE] knob to fine-tune. Hold [TAP TEMPO] to revert to saved tempo.", source: "Owner's Manual p.4", topTip: true, context: "Tempo is fundamental for synchronized looping. Tap tempo is intuitive for live performance, while knob adjustment allows for precise BPM settings. The RC-202's tempo can also be synchronized via MIDI (see System Settings).", related: ["MIDI Sync Settings"] },
+            { category: "basic_operations", title: "Recording, Overdubbing, Playback", description: "Press [▶/■] to cycle: Record (Red) -> Playback (Green) -> Overdub (Orange). Hold [■] to clear a track.", source: "Owner's Manual p.4", context: "This is the core looping workflow. Understanding the indicator colors helps you know the track's status at a glance. Overdubbing layers new audio, while 'Replace' mode (see Track Settings) overwrites." },
+            { category: "basic_operations", title: "Overdub vs. Replace Mode", description: "In Track Settings, choose between 'Overdub' (layering) or 'Replace' (overwriting) for new recordings on existing tracks.", source: "Parameter Guide p.11", context: "This setting determines how new audio interacts with existing loops. Overdub is ideal for building complex layers, while Replace is useful for correcting mistakes or creating variations on a theme.", related: ["Track Playback Method"] },
 
-            // --- DRUM ---
-            { category: "drum", title: "Laying Out a Drum Kit", description: "In the Drum Sampler, press any musical key to select it for editing. Use the encoders to set the sample's start and end points for that key. Press the key again to confirm.", source: "Manual p.64", context: "This allows you to chop up a single audio file (like a drum loop or a vocal phrase) and assign different slices to different keys, creating a playable kit from one source.", related: ["Drum Envelope", "Sampling a New Sound"] },
-            { category: "drum", title: "Drum Envelope", description: "The Drum Envelope (T2 in Drum mode) is a transient shaper. Use it to control the attack (punch) and release (tail) of your drum sounds.", source: "Manual p.68", context: "This is different from the synth's ADSR envelope. It's specifically designed for percussion. Increase the attack to make a kick drum punchier, or soften it to make a snare less aggressive." },
-            { category: "drum", title: "Dbox Drum Synth", description: "The Dbox engine is a dual-oscillator synth for creating your own drum sounds from scratch. Every key on the keyboard represents a unique sound you can edit.", source: "Manual p.66", context: "Instead of using samples, you can synthesize your own kicks, snares, and hi-hats. Hold SHIFT to access the parameters for the second oscillator and the filter." },
-            
-            // --- TAPE ---
-            { category: "tape", title: "Recording to Tape", description: "Select a tape track (T1-T4), find an empty spot, set your input level with the Orange encoder, then hold REC and press PLAY to start recording.", source: "Manual p.70", topTip: true, context: "The tape recorder is the heart of the OP-1. Unlike a sequencer that records MIDI notes, the tape records pure audio. This means once something is recorded, you can't change the notes, but you can manipulate the audio in creative ways like changing the speed or reversing it.", related: ["Lifting and Dropping Audio", "Tape Tricks"] },
-            { category: "tape", title: "Lifting and Dropping Audio", description: "Use the LIFT key (scissors) to copy a selection of audio from the tape. Move to a new location and use the DROP key (down arrow) to paste it.", source: "Manual p.72", context: "This is the OP-1's version of copy and paste. It's essential for arranging your song. You can lift a drum loop from track 1, move the tape head, and drop it later in the song on track 2 to build your arrangement.", related: ["Splitting and Joining Takes"] },
-            { category: "tape", title: "Splitting and Joining Takes", description: "Use the SPLIT key to cut a recorded take at the playhead's position. To join two adjacent takes into one, place the playhead between them and press SHIFT + SPLIT.", source: "Manual p.72, 74", context: "Splitting is crucial for fine-tuning the timing of your recordings or isolating a single sound. Joining is useful for cleaning up your tape view and grouping parts that belong together." },
-            { category: "tape", title: "Overdubbing vs. Punch-in", description: "By default, recording on a track with existing audio will overdub (mix with) the old audio. To punch-in (replace) a section, lift the audio from that section first, then record into the empty space.", source: "General Workflow", context: "Understanding this is key to building layers. Overdubbing is great for adding harmonies or stacking percussion. Punch-in recording is for correcting mistakes or replacing a part entirely." },
-            { category: "tape", title: "Tape Tricks", description: "In Tape Mode, keys 1-8 become 'Tape Tricks'. These include setting loop points (1, 2), reversing tape playback (5), and a tempo-synced stutter effect (6).", source: "Manual p.73", context: "These are powerful performance tools. You can create fills with the 'Chop' trick or reverse your entire track for a moment. Experiment with them while your song is playing to create interesting variations." },
-            { category: "tape", title: "Change Tape Styles", description: "Press SHIFT + TAPE to open the tape browser. Here you can switch between 8 different tapes and choose from 4 different 'styles' (Studio, Vintage, Porta, Disc) that color the sound.", source: "Manual p.76", context: "Each tape style has a unique character. 'Vintage' might add some hiss and warmth, while 'Studio' is clean. This is a great way to add a specific vibe to your entire track. You can also rename tapes here to keep your projects organized." },
-            
-            // --- MIXER ---
-            { category: "mixer", title: "Mute Tracks in Mixer", description: "In the Mixer (T1), you can mute individual tracks by holding SHIFT and pressing the corresponding track key (T1-T4).", source: "Manual p.78", context: "This is much faster than turning the volume knob down and is essential for arranging and mixing down your track. You can use it to build your song by bringing elements in and out." },
-            { category: "mixer", title: "Master EQ and FX", description: "Press MIXER, then T2 for the master EQ or T3 for the master FX. These affect the entire mix coming from all four tape tracks.", source: "Manual p.80, 81", context: "The master EQ and FX are not recorded to the individual tape tracks. They are applied live during playback and when you record the final mixdown. Use them to glue your track together and give it a final polish.", related: ["Recording a Final Mixdown"] },
-            { category: "mixer", title: "Master Drive", description: "In the Master Out screen (MIXER -> T4), the Drive parameter adds saturation and compression to your final mix, making it sound louder and more compact.", source: "Manual p.82", context: "A little drive can add warmth and character, but too much can make the mix sound distorted and flat. Use it subtly to add punch and cohesion. The 'Release' parameter controls how the compression 'pumps'." },
+            // --- PHRASE MEMORIES & BANKS ---
+            { category: "phrase_memories", title: "Selecting Phrase Memories & Banks", description: "Press [MEMORY], then use buttons 1-8 for phrase memories. Turn [VALUE] to select banks. Hold [VALUE] while turning for bank selection in Play screen.", source: "Owner's Manual p.5", topTip: true, context: "The RC-202 organizes your loops into 8 phrase memories per bank, and 8 banks total. Efficient navigation allows for quick song changes or live arrangement." },
+            { category: "phrase_memories", title: "Saving Phrase Memories (Write)", description: "Press [WRITE], select destination (1-8), then press [WRITE] again. Bank settings are saved automatically with phrase memories.", source: "Owner's Manual p.5", context: "Always save your work! Unsaved changes are lost on power off or when switching memories/banks. If memory is full (E04), delete old phrases first.", related: ["Deleting Phrase Memories", "Troubleshooting: Error Messages"] },
+            { category: "phrase_memories", title: "Deleting Phrase Memories", description: "Hold [WRITE] for 2 seconds, select memory to delete (1-8), then press [WRITE]. Press [SETUP] to cancel.", source: "Owner's Manual p.5", context: "Be careful! Deleted phrase memories, especially demo data in Bank 8, cannot be recovered. Back up important loops via USB before deleting." },
+            { category: "phrase_memories", title: "Bank Settings Overview", description: "Press [SETUP], then select RHYTHM, LOOP, CTL, or FX buttons to access bank-specific settings. Use [VALUE] knob to edit.", source: "Parameter Guide p.9", context: "Bank settings allow you to customize the behavior of the rhythm, looper, external controllers, and effects for each bank independently. These settings are saved with the phrase memories in that bank." },
 
-            // --- SEQUENCER ---
-            { category: "sequencer", title: "Sequencer vs. Tape", description: "Sequencers store note data, not audio. This means you can record a pattern with a sequencer and then change the synth sound that plays the pattern.", source: "Manual p.86", topTip: true, context: "This is a key difference from the tape. Use a sequencer to create a melody or drum pattern, then go to Synth or Drum mode and swap out different presets to see how they sound with your sequence. To commit the sound, you must then record the sequencer's output to the tape.", related: ["Recording to Tape"] },
-            { category: "sequencer", title: "Enable a Sequencer", description: "To choose and enable a sequencer, press SHIFT + SEQUENCER key. Select the type with the Blue encoder and press the SEQUENCER key again to activate it.", source: "Manual p.86", context: "Repeatedly pressing the sequencer key (without SHIFT) will toggle the currently selected sequencer on and off. The light on the key indicates if it's active." },
-            
+            // --- TRACK SETTINGS ---
+            { category: "track_settings", title: "Adjusting Track Playback Level", description: "Press a [TRACK] button (it blinks green), then turn [VALUE] knob to adjust its playback volume.", source: "Parameter Guide p.11", context: "Individual track volume control is essential for mixing your loops. You can adjust levels even during playback for dynamic mixing." },
+            { category: "track_settings", title: "Playing Tracks Backward (Reverse)", description: "Press [REVERSE], then the desired [TRACK] button. Purple indicator means reverse playback.", source: "Parameter Guide p.11", context: "Reverse playback is a creative effect that can transform your loops. Note that you cannot overdub on a track set to reverse playback." },
+            { category: "track_settings", title: "Undo/Redo Recordings", description: "Press [UNDO/REDO], then the [TRACK] button. Orange for Undo, Red for Redo (overdub only).", source: "Parameter Guide p.11", context: "The undo/redo function provides a safety net for your recordings and overdubs. It allows you to quickly revert mistakes or toggle between different overdub layers." },
+            { category: "track_settings", title: "Loop vs. One-Shot Playback", description: "Press [LOOP/1 SHOT], then the [TRACK] button. Blue means One-Shot (plays once and stops).", source: "Parameter Guide p.11", context: "Loop mode is standard for continuous looping. One-Shot mode is great for triggering samples, sound effects, or vocal phrases that should play only once. In One-Shot, pressing [▶/■] retriggers playback from the start." },
+
             // --- EFFECTS ---
-            { category: "effects", title: "Using Effects (FX)", description: "Press T3 in Synth or Drum mode to access the FX page. Press SHIFT + T3 to change the effect type. The effect is part of the sound and gets recorded to tape.", source: "Manual p.40", context: "Effects are crucial for sound design. They can be simple (like a delay) or transformative (like the CWO). Remember that the FX you choose is saved with your sound preset.", related: ["Modulating with an LFO"] },
-            
-            // --- SAMPLING ---
-            { category: "sampling", title: "Sampling a New Sound", description: "In Synth or Drum sampler, press the INPUT key (mic icon). Select your source (mic, line in, radio, or internal resampling) and set the threshold. Hold any musical key to start sampling.", source: "Manual p.36, 106", topTip: true, context: "Once you release the key, the recording stops and is immediately playable on the keyboard. This fast, intuitive workflow is what makes sampling on the OP-1 so fun. Use the encoders to trim the start/end points after recording." },
-            { category: "sampling", title: "Internal Resampling (EAR)", description: "In the input selection screen (SHIFT + INPUT), choose the 'EAR' icon. This allows you to record whatever is currently coming out of the OP-1's main output back into the sampler.", source: "Manual p.106", context: "This is an incredibly powerful technique. You can play a chord, add effects and LFO, and then resample that entire sound as a new sample. This allows you to create complex, layered sounds that would be impossible to make otherwise." },
+            { category: "effects", title: "Editing Input FX / Track FX", description: "Press a blinking FX button (1-8), turn [VALUE] for type, press [VALUE] for parameter, turn [VALUE] to adjust. For Track FX, select track with [TRACK] button.", source: "Parameter Guide p.16", topTip: true, context: "Input FX are applied *before* recording, shaping the sound that goes into your loop. Track FX are applied *during playback*, allowing real-time manipulation of existing loops. Experiment with both for diverse sound design." },
+            { category: "effects", title: "Understanding FX Indicators", description: "Blinking purple: Editing. Lit purple: On (knobs active). Lit red: On. Unlit: Off.", source: "Parameter Guide p.16", context: "The indicator lights provide quick visual feedback on the status of your effects, letting you know if an effect is active, being edited, or bypassed." },
+            { category: "effects", title: "Key FX Types for Looping", description: "Explore Delay, Reverb, Slicer, Beat Repeat, and Vinyl Flick for dynamic loop manipulation.", source: "Parameter Guide p.16-24", context: "These effects are particularly powerful for looping. Slicer and Beat Repeat can chop and re-arrange your loops rhythmically, while Vinyl Flick offers turntable-like stop/start effects. Delay and Reverb add space and depth." },
+            { category: "effects", title: "Pitch-Detection FX Limitations", description: "Effects like GUITAR TO BASS, PITCH BEND, ROBOT may not work correctly with chords or multiple tracks.", source: "Parameter Guide p.16", context: "These effects rely on monophonic pitch detection. For best results, use them on single-note melodies or isolated vocal lines. Applying them to complex harmonies can lead to undesirable artifacts." },
 
-            // --- MIDI & CONNECTIVITY ---
-            { category: "midi_connectivity", title: "MTP File Transfer", description: "Connect your OP-1 to a computer via USB-C. Hold SHIFT and press COM, then press T4 (MTP). The OP-1 will appear as a device on your computer for transferring audio files.", source: "Manual p.112, 119", context: "This is how you back up your tapes and presets, or load new samples onto the device. You can drag and drop audio files directly into the 'synth' or 'drum' folders to use them as presets." },
-            { category: "midi_connectivity", title: "FM Radio Transmitter", description: "Press the OUTPUT key and select the antenna icon. You can now broadcast the OP-1's audio on an FM frequency to a nearby radio (like the OB-4 or a car stereo).", source: "Manual p.110", context: "This is a unique feature for sharing your music wirelessly. The OP-1 will scan for open frequencies to minimize interference. You can even sync the frequency with a nearby OB-4." },
-            { category: "midi_connectivity", title: "Recording a Final Mixdown", description: "Press the OUTPUT key and select the mixdown screen. Press T4 to start recording your performance. When finished, press T2 to stop. The final stereo file is found in the 'mixdown' folder via MTP.", source: "Manual p.108", context: "This records everything you hear from the main output, including master EQ, FX, and live manipulations. It's the primary way to export a finished song as a single stereo file." },
+            // --- RHYTHM SETTINGS ---
+            { category: "rhythm", title: "Adjusting Rhythm Volume", description: "In Bank Settings (RHYTHM), adjust 'LVL' (Rhythm Level) from 0-100 (default 50).", source: "Parameter Guide p.12", context: "Control the volume of the built-in rhythm guide to suit your performance needs. You might want it louder for practice and quieter for recording." },
+            { category: "rhythm", title: "Selecting Rhythm Pattern & Time Signature", description: "In Bank Settings (RHYTHM), select 'PTN' for pattern and 'BEAT' for time signature. Set BEAT *before* recording.", source: "Parameter Guide p.12", context: "The RC-202 offers various rhythm patterns (e.g., Rock, Shuffle, Funk). The time signature (e.g., 4/4, 3/4) is crucial and cannot be changed after recording the first track in a phrase memory." },
+            { category: "rhythm", title: "Rhythm Only to Headphones (Rhythm Line Out)", description: "In Bank Settings (RHYTHM), set 'LIN' to OFF to send rhythm only to PHONES jack.", source: "Parameter Guide p.12", context: "This is ideal for using the rhythm as a click track for yourself without sending it to the main outputs, which is common in live performance or studio recording." },
+            { category: "rhythm", title: "Recording/Playback Count-In", description: "In Bank Settings (RHYTHM), set 'REC' or 'PLY' to ON for a one-measure count-in before recording or playback.", source: "Parameter Guide p.12", context: "Count-ins help you start recordings and playback precisely in time, especially useful for complex arrangements or when playing with other musicians." },
+            { category: "rhythm", title: "Rhythm Stop Behavior", description: "In Bank Settings (RHYTHM), set 'STP' to LPR (stops with looper), REC (stops after first recording), or OFF (always plays).", source: "Parameter Guide p.12", context: "Customize how the rhythm track stops to fit your workflow. 'LPR' is common for synchronized stops, while 'REC' can be useful for initial track laying." },
 
-            // --- PRO TIPS ---
-            { category: "pro_tips", title: "Nudge Tempo", description: "In the Tempo screen, you can use the LEFT and RIGHT arrow keys to temporarily nudge the tempo up or down. This is great for syncing with a live musician by ear.", source: "Manual p.96", context: "Unlike changing the BPM directly, nudging is temporary and helps you get back in time without stopping the music. It's a subtle but powerful feature for live performance." },
-            { category: "pro_tips", title: "Save a Sound Snapshot", description: "To quickly save the current state of a sound you're working on, just hold its preset key (1-8) for three seconds. A snapshot will be saved to the 'snapshot' folder.", source: "Manual p.118", context: "This is faster than going through MTP mode to save a patch. It's perfect for when you've tweaked a sound into something you love and want to save it immediately without interrupting your creative flow." },
-            { category: "pro_tips", title: "Delayed Power Off", description: "To prevent accidentally turning off your OP-1, go to the settings menu (SHIFT + TEMPO), select System, and set 'Power Off' to 'Delayed'.", source: "Manual p.103", context: "This simple change can save you from the heartache of bumping the power switch during a performance. With this setting, you'll have to hold the switch down for a moment to power off." },
-            { category: "pro_tips", title: "Lift/Drop to Backup Tape", description: "Before making a risky change (like recording over a whole track), you can back up your entire tape. Set a loop around the whole song, press SHIFT + LIFT to copy all 4 tracks. If you make a mistake, you can use DROP to paste the backup back.", source: "General Workflow", context: "This is the OP-1 equivalent of 'Save As...'. It gives you a temporary backup in memory, providing a safety net for destructive editing or recording." }
+            // --- EXTERNAL CONTROL (CTL) ---
+            { category: "external_control", title: "Assigning Footswitches/Expression Pedals", description: "In Bank Settings (CTL), select CTL1, CTL2, or EXP. Then choose a 'CTL Target' (function) from 1-35.", source: "Parameter Guide p.25", topTip: true, context: "External control is vital for hands-free operation during live performance. You can assign nearly any function, from track record/play to effect parameter control, to a footswitch or expression pedal." },
+            { category: "external_control", title: "MIDI Control Change Assignments", description: "In Bank Settings (CTL), select CC80-CC84 as CTL Source to assign MIDI CC messages to functions.", source: "Parameter Guide p.25", context: "Integrate the RC-202 into a larger MIDI setup. You can control various parameters remotely from a MIDI controller or DAW, expanding your performance possibilities." },
+            { category: "external_control", title: "Common CTL Targets", description: "Assign 'Track 1/2 Rec/Play', 'Track Clear', 'Undo/Redo', 'Master Play/Stop', 'Tap Tempo', or FX knob control.", source: "Parameter Guide p.25", context: "These are some of the most useful assignments for live looping, allowing you to control essential functions without taking your hands off your instrument." },
+
+            // --- SYSTEM SETTINGS ---
+            { category: "system_settings", title: "I/O Settings (Output/Headphone Level, Phantom Power)", description: "In System Settings (I/O), adjust 'OLV' (Output Level), 'PLV' (Headphone Level), and 'P48' (Phantom Power ON/OFF).", source: "Parameter Guide p.9", context: "These global settings control the overall volume and input configuration. Always be cautious with phantom power, ensuring it's only ON for condenser microphones." },
+            { category: "system_settings", title: "MIDI Sync & Channel Settings", description: "In System Settings (MIDI), set 'SYN' (MIDI Sync) to AUTO/INT, 'SRC' (Sync Source) to USB/MID, and 'RCV'/'TRN' for MIDI channels.", source: "Parameter Guide p.9", context: "Proper MIDI setup ensures the RC-202 synchronizes correctly with other gear (DAW, drum machine, etc.). Omni Mode allows receiving on all channels." },
+            { category: "system_settings", title: "USB Mode (Mass Storage/Audio)", description: "In System Settings (USB), set 'MD' to 'MSG' for file transfer or 'AUD' for USB Audio/MIDI (requires driver).", source: "Parameter Guide p.10", context: "The USB port is versatile. 'MSG' mode is for managing WAV files on the device, while 'AUD' turns the RC-202 into an audio interface for your computer." },
+            { category: "system_settings", title: "Auto Off & Knob Lock", description: "In System Settings (GENERAL), disable 'AOF' (Auto Off) to prevent automatic power down. Use 'LOK' (Value Knob Lock) to prevent accidental changes.", source: "Parameter Guide p.10", context: "Customize these general settings for convenience and to prevent accidental interruptions during long sessions or performances." },
+            { category: "system_settings", title: "Quick Clear Function", description: "In System Settings (GENERAL), set 'CLR' to ON to allow double-clicking [■] to clear a track immediately.", source: "Parameter Guide p.10", context: "This is a handy shortcut for quickly clearing tracks, especially useful in fast-paced live situations where holding the button for 2 seconds might be too slow." },
+            { category: "system_settings", title: "Factory Reset Procedure", description: "Hold [SETUP] + [MEMORY] on power-up. Select ALL/SYS/B1-B8 with [VALUE] knob, then press [WRITE] to confirm.", source: "Parameter Guide p.13", context: "A factory reset can resolve many issues, but be aware that 'ALL' or 'B1-B8' options will erase all phrase memories. Back up your data before performing a full reset." },
+
+            // --- CONNECTIONS ---
+            { category: "connections", title: "Connecting Instruments & Mics", description: "Use INPUT INST (L/MONO, R) for instruments/effects, INPUT MIC for microphones (with phantom power option), and AUX IN for audio players.", source: "Owner's Manual p.6", topTip: true, context: "Proper connection ensures optimal signal flow. Remember to use L/MONO for single mono sources, and be mindful of phantom power requirements for your microphone." },
+            { category: "connections", title: "Outputting to Amps & Headphones", description: "Connect OUTPUT jacks (L/MONO, R) to your amp/monitors. Use PHONES jack for headphones.", source: "Owner's Manual p.6", context: "Ensure your output levels are appropriate for your monitoring system. Always turn down volumes before connecting/disconnecting to prevent damage." },
+            { category: "connections", title: "External Control Connections", description: "Connect expression pedals (EV-5, FV-500H/L) or footswitches (FS-5U, FS-7, FS-6) to the CTL 1, 2/EXP jack.", source: "Owner's Manual p.6", context: "These connections enable hands-free control, which is essential for dynamic live looping performances." },
+            { category: "connections", title: "MIDI & USB Connectivity", description: "Use MIDI IN/OUT for MIDI devices. USB connects to computer for mass storage or audio/MIDI.", source: "Owner's Manual p.6", context: "The RC-202 is a versatile hub. MIDI allows synchronization with other gear, while USB facilitates file management and acts as an audio interface." },
+
+            // --- TROUBLESHOOTING ---
+            { category: "troubleshooting", title: "No Sound / Low Volume Issues", description: "Check cables, connections, amp/mixer power/volume, and RC-202 levels (Track, Output, Headphone). Ensure tracks are recorded.", source: "Parameter Guide p.26", topTip: true, context: "This is the most common issue. Systematically check each point in the signal chain from input to output. Also verify if the rhythm line out is correctly set if rhythm is missing." },
+            { category: "troubleshooting", title: "Recording/Overdub Stops Early", description: "This indicates insufficient internal memory (E04 error). Delete unneeded phrase memories.", source: "Parameter Guide p.27", context: "The RC-202 has finite memory. Regularly manage your phrase memories, backing up and deleting old ones to free up space for new creations." },
+            { category: "troubleshooting", title: "Tempo Not Changing / MIDI Sync Issues", description: "If tempo is stuck, ensure recording/overdub is not in progress. If MIDI sync is AUTO, try setting to INTERNAL.", source: "Parameter Guide p.26", context: "Tempo can be locked during active recording. If using MIDI sync, ensure your external device is sending a stable clock or switch to internal tempo for manual control." },
+            { category: "troubleshooting", title: "Error Messages (E01-E99)", description: "Refer to the Error Message List for specific meanings and actions (e.g., E01: recording too long, E91: invalid file).", source: "Parameter Guide p.27", context: "Error messages provide crucial diagnostic information. Consult the manual's error list to quickly identify and resolve the problem, from memory issues to file format problems." },
+
+            // --- IMPORTANT NOTES ---
+            { category: "important_notes", title: "Automatic Saving & Data Backup", description: "The RC-202 saves automatically, but always back up important data via USB to your computer to prevent irretrievable loss.", source: "Owner's Manual p.8", topTip: true, context: "While convenient, automatic saving means destructive actions are permanent. Regular backups are your safety net against accidental deletion, malfunction, or power loss." },
+            { category: "important_notes", title: "Phantom Power Precautions", description: "Only use phantom power for condenser microphones that require it. Turn OFF for dynamic mics or other devices to prevent damage.", source: "Owner's Manual p.8", context: "Supplying phantom power to incompatible devices can cause serious damage. Always check your microphone's specifications before enabling this feature." },
+            { category: "important_notes", title: "Auto Off Function", description: "The unit powers off after 10 hours of inactivity. Disable 'Auto Off' in System Settings if you need continuous power.", source: "Owner's Manual p.7", context: "This power-saving feature is useful but can be inconvenient during long sessions. Adjust it in system settings to suit your workflow." },
+            { category: "important_notes", title: "Copyright and Usage Rights", description: "Unauthorized recording/copying of copyrighted works is forbidden. Roland permits use of content (except demos) for original musical works.", source: "Owner's Manual p.8", context: "Be mindful of intellectual property rights when creating and distributing music using the RC-202. Ensure your use of included content aligns with Roland's terms." }
         ];
-        const op1LicksData = [
-            { title: "Classic Arp Up", sequencer: "Arpeggio", description: "Hold down a chord and let the Arpeggio sequencer play the notes upwards." },
-            { title: "Random Melody", sequencer: "Endless", description: "Record a series of random notes into Endless. Set the play mode to 'random' for generative melodies." },
-            { title: "Percussive Loop", sequencer: "Finger", description: "Tap out a rhythmic pattern on the drum sampler using the Finger sequencer. Experiment with different drum sounds." },
-            { title: "Gliding Bass", sequencer: "Arpeggio", description: "Use a synth patch with high portamento. Play a bassline with the arpeggiator for smooth glides between notes." },
-            { title: "Stutter Effect", sequencer: "Pattern", description: "Record a short, percussive sound. In Pattern, draw a very short, repeating pattern to create a stutter effect." },
-            { title: "Chord Progression", sequencer: "Hold", description: "Hold down a chord with the Hold sequencer, then play a melody over it manually or with another sequencer." },
-            { title: "Random Drum Fills", sequencer: "Tombola", description: "Assign different drum sounds to the Tombola sequencer. Adjust bounciness and speed for chaotic fills." },
-            { title: "Ambient Pad Swells", sequencer: "Sketch", description: "Draw long, slow lines in Sketch with a pad sound. Experiment with different LFOs and effects for evolving textures." },
-            { title: "Gated Arp", sequencer: "Arpeggio", description: "Combine the Arpeggio with a gate effect (like CWO's filter) to create a rhythmic, choppy arpeggio." },
-            { title: "Sidechain Pumping", sequencer: "Punch", description: "Use the Punch effect on a track and automate its 'Power' parameter with a sequencer to create a sidechain-like pumping effect." },
-            { title: "Drone with LFO", sequencer: "Endless", description: "Record a single sustained note into Endless. Then, heavily modulate the synth's filter with an LFO for an evolving drone." },
-            { title: "Reverse Percussion", sequencer: "Finger", description: "Record a drum pattern. Lift it from tape, reverse it, and drop it back for unique reversed percussion." },
-            { title: "Tape Stop Effect", sequencer: "Tape Tricks", description: "Use the 'Stop' tape trick (key 3 or 4) to create a classic tape stop effect on your playing." },
-            { title: "Wobbly Synth Bass", sequencer: "Arpeggio", description: "Use a synth with a sine wave, apply an LFO to pitch, and arpeggiate for a classic wobbly bassline." },
-            { title: "Glitchy Vocal Chops", sequencer: "Finger", description: "Sample a vocal phrase. Chop it into small pieces and assign to keys. Use Finger to trigger them rapidly for glitchy vocal chops." },
-            { title: "Random Chord Generator", sequencer: "Tombola", description: "Assign different chord samples to Tombola. Let it randomly trigger chords for unexpected harmonies." },
-            { title: "Rhythmic Noise", sequencer: "Pattern", description: "Use a noise synth engine. Record rhythmic patterns in Pattern for industrial textures." },
-            { title: "Melodic Feedback", sequencer: "Delay", description: "Use a delay effect with high feedback. Play a short melody, then let the delay self-oscillate and create new melodic phrases." },
-            { title: "Warped Tape Loops", sequencer: "Tape Tricks", description: "Record a loop, then use tape tricks like 'Chop' (key 6) or 'Reverse' (key 5) to mangle it in real-time." },
-            { title: "Swelling Pads", sequencer: "Hold", description: "Hold a chord with the Hold sequencer and use a synth with a slow attack and long release for evolving pad sounds." },
-            { title: "Broken Arp", sequencer: "Arpeggio", description: "Set the Arpeggio to 'random' or 'up/down' and occasionally skip notes for a broken, unpredictable feel." },
-            { title: "Walking Bassline", sequencer: "Endless", description: "Use Endless to record a walking bassline over a chord progression. Its ability to hold many notes makes it ideal for longer, non-repeating phrases." },
-            { title: "Finger Drumming Retrigger", sequencer: "Finger", description: "Use Finger's 'retrigger' play mode. Now, holding down a key will repeat that drum sound at a set rhythm, great for trap-style hi-hats or drum rolls." },
-            { title: "Delayed Arp", sequencer: "Arpeggio", description: "Use a synth patch with a long attack. Now when you use the arpeggiator, the notes will swell into each other creating a soft, pad-like texture." },
-            { title: "Polyrhythmic Pattern", sequencer: "Pattern", description: "Record a 4/4 kick and snare pattern. Then, switch to a different sound and record a 7-step pattern for a hi-hat. They will loop at different rates, creating a polyrhythm." },
-            { title: "Generative Ambience", sequencer: "Sketch", description: "In Sketch, draw a few random points. Set the play mode to 'free' and let it generate evolving ambient textures." },
-            { title: "Random Percussion", sequencer: "Tombola", description: "Load various percussion samples into Tombola. Set bounciness high and speed low for sparse, random hits." },
-            { title: "Lo-Fi Tape Hiss", sequencer: "Tape", description: "Record silence to tape, then apply the 'Vintage' tape style and a lo-fi effect for authentic tape hiss." },
-            { title: "Chopped Sample Loop", sequencer: "Finger", description: "Sample a melodic phrase. Chop it into small segments and assign to keys. Finger drum a new melody from the chopped parts." },
-            { title: "Pitch-Shifted Drums", sequencer: "Drum", description: "Apply a Pitch Shift effect to your drum kit. Record a pattern, then change the pitch of the entire kit in real-time." },
-            { title: "Automated Filter Sweeps", sequencer: "LFO", description: "Assign an LFO to a filter cutoff. Record a sequence, then automate the LFO's rate or depth for dynamic filter sweeps." },
-            { title: "Reverse Delay", sequencer: "Delay", description: "Use a delay effect. Record a sound, then reverse the tape. The delay will now play forward while the original sound plays backward." },
-            { title: "Gated Reverb", sequencer: "Reverb", description: "Apply a Reverb effect. Then, use a sequencer to quickly gate the track's volume, creating a classic gated reverb sound." },
-            { title: "Granular Textures", sequencer: "Granular", description: "Use the Granular synth engine or Granular Delay effect. Experiment with parameters to create evolving, shimmering textures." },
-            { title: "Polyphonic Finger Fun", sequencer: "Finger", description: "Finger is polyphonic. Record a bassline, then without erasing, record chords over the top on a different part of the keyboard." },
-            { title: "Tombola Drone", sequencer: "Tombola", description: "Set bounciness and speed to zero. The notes will just stick to the walls and play continuously. Use this with pad sounds for a strange, shifting drone." },
-            { title: "Sketching Rhythms", sequencer: "Sketch", description: "Use Sketch with a drum kit. Draw vertical lines to trigger multiple sounds at once (a chord of drums), and horizontal lines for rhythmic patterns." },
-            { title: "Hold for Layering", sequencer: "Hold", description: "Use Hold to sustain a pad chord, leaving your hands free to play a melody on top with another sound, which you can then record to tape." },
-            { title: "Arp Direction Change", sequencer: "Arpeggio", description: "Automate the Arpeggio direction. Record the arp playing 'UP', then lift and drop a section, and change the direction to 'DOWN' for a dynamic arpeggio." }
+
+        const rhythmPatternsData = [
+            { title: "P01 Rock 1", description: "Standard rock drum beat." },
+            { title: "P02 Rock 2", description: "Alternative rock drum beat." },
+            { title: "P03* Basic", description: "Simple, fundamental beat. (*Default)" },
+            { title: "P04 Pop", description: "Upbeat pop rhythm." },
+            { title: "P05 Dance", description: "Electronic dance beat." },
+            { title: "P06 Funk", description: "Groovy funk rhythm." },
+            { title: "P07 Jazz", description: "Swing jazz feel." },
+            { title: "P08 Shuffle", description: "Shuffling rhythm." },
+            { title: "P09 Waltz", description: "3/4 time signature waltz." },
+            { title: "P10 Latin", description: "Percussive Latin rhythm." },
+            { title: "P11 Groove Beat 1", description: "Modern electronic groove." },
+            { title: "P12 Groove Beat 2", description: "Another modern electronic groove." },
+            { title: "P13 Shuffle", description: "Another shuffling rhythm." },
+            { title: "P14 Pop", description: "Another pop rhythm." },
+            { title: "P15 Funk", description: "Another funk rhythm." },
+            { title: "P16 Fusion", description: "Complex, intricate rhythm." },
+            { title: "P17 Swing", description: "Swing rhythm." }
         ];
+
         const effectsListData = {
-            "CWO": { description: "A complex effect that combines a filter, a crusher, and a tremolo, creating unique sonic textures.", params: ["Filter", "Crush", "Tremolo", "Mix"], source: "Manual p.41" },
-            "Delay": { description: "Adds echoes to the sound, creating a sense of space and repetition.", params: ["Time", "Feedback", "Mix"], source: "Manual p.42" },
-            "Grid": { description: "A rhythmic effect that slices and dices the audio, creating choppy, glitchy patterns.", params: ["Rate", "Depth", "Pattern", "Mix"], source: "Manual p.43" },
-            "Mother": { description: "A cavernous, otherworldly reverb with gating and filtering.", params: ["Distance", "Gate", "Color", "Mix"], source: "Manual p.44" },
-            "Nitro": { description: "A dual band-pass filter with resonance and frequency following.", params: ["Lows", "Highs", "Freq Follow", "Q (Resonance)"], source: "Manual p.45" },
-            "Phone": { description: "A lo-fi effect that simulates talking through various telephone and radio devices.", params: ["Tone", "GSM", "Baud", "Telemetry"], source: "Manual p.46" },
-            "Punch": { description: "A powerful compressor/saturator that adds punch and character to sounds.", params: ["Frequency", "Punch", "Rounds", "Power"], source: "Manual p.47" },
-            "Spring": { description: "A classic spring reverb simulation, great for bouncy, metallic textures.", params: ["Tone", "Turns", "Damping", "Mix"], source: "Manual p.48" }
+            "LPF (Low Pass Filter)": { description: "A filter that cuts the region above the cutoff frequency.", params: ["Cutoff (Cut) ☑", "Resonance (Res)"], inputFX: true, trackFX: true },
+            "BPF (Band Pass Filter)": { description: "A filter that cuts only the region surrounding the cutoff frequency.", params: ["Cutoff (Cut) ☑", "Resonance (Res)"], inputFX: true, trackFX: true },
+            "HPF (High Pass Filter)": { description: "A filter that cuts the region below the cutoff frequency.", params: ["Cutoff (Cut) ☑", "Resonance (Res)"], inputFX: true, trackFX: true },
+            "PHASER": { description: "Gives the sound a swishing quality by adding a phase-shifted sound.", params: ["Depth (Dep)", "Resonance (Res)"], inputFX: true, trackFX: true },
+            "FLANGER": { description: "Produces a metallic resonance reminiscent of a jet airplane taking off and landing.", params: ["Depth (Dep)", "Feedback (Fb)"], inputFX: true, trackFX: true },
+            "SYNTH": { description: "Generates a synthesizer sound.", params: ["Type", "Pitch"], inputFX: true, trackFX: false },
+            "LO-FI": { description: "This effect intentionally degrades the sound to create a distinctive character.", params: ["Bit Depth (Dep)", "Sample Rate (Smp)"], inputFX: true, trackFX: true },
+            "RING MODULATOR": { description: "By applying amplitude modulation (AM) to the input signal, this allows you to produce bell-like sounds.", params: ["Frequency (Frq) ☑", "Depth (Dep)"], inputFX: true, trackFX: true },
+            "GUITAR TO BASS": { description: "Transforms a guitar sound into a bass sound.", params: ["Level", "Tone"], inputFX: true, trackFX: false },
+            "SLOW GEAR": { description: "Creates a volume-swell sound (violin technique).", params: ["Attack Time"], inputFX: true, trackFX: false },
+            "TRANSPOSE": { description: "Transposes the sound when you turn the FX on.", params: ["Transpose (Trn) ☑"], inputFX: true, trackFX: false },
+            "PITCH SHIFT": { description: "Lets you raise or lower the pitch while you perform.", params: ["Pitch (Pch) ☑", "Fine (Fin)"], inputFX: true, trackFX: false },
+            "ROBOT": { description: "Cyber-robot voice.", params: ["Gender", "Pitch"], inputFX: true, trackFX: false },
+            "VOCAL DIST": { description: "Distortion for vocals.", params: ["Drive", "Tone"], inputFX: true, trackFX: false },
+            "VOCODER": { description: "Vocoder sound that uses the audio input to modulate the sound of the track you specify.", params: ["Level", "Tone"], inputFX: true, trackFX: false },
+            "NATURAL COMP": { description: "Produces a natural compression effect (an effect that makes the volume more consistent).", params: ["Threshold", "Ratio"], inputFX: true, trackFX: false },
+            "HARD COMP": { description: "Produces a strong compression effect (an effect that makes the volume more consistent).", params: ["Threshold", "Ratio"], inputFX: true, trackFX: false },
+            "NATURAL LIM": { description: "Applies a natural limiter effect (an effect that limits the volume).", params: ["Threshold"], inputFX: true, trackFX: false },
+            "HARD LIM": { description: "Applies a strong limiter effect (an effect that limits the volume).", params: ["Threshold"], inputFX: true, trackFX: false },
+            "PHONE VOX": { description: "Gives the sound a character similar to a voice heard via telephone.", params: ["Tone", "Drive"], inputFX: true, trackFX: false },
+            "EQ": { description: "Adjusts the tone as an equalizer.", params: ["Low", "Mid", "High"], inputFX: true, trackFX: false },
+            "LOW ISOLATOR": { description: "An equalizer that cuts the volume of the low-frequency region.", params: ["Frequency", "Gain"], inputFX: true, trackFX: true },
+            "MID ISOLATOR": { description: "An equalizer that cuts the volume of the mid-frequency region.", params: ["Frequency", "Gain"], inputFX: true, trackFX: true },
+            "HIGH ISOLATOR": { description: "An equalizer that cuts the volume of the high-frequency region.", params: ["Frequency", "Gain"], inputFX: true, trackFX: true },
+            "OCTAVE": { description: "Adds a sound one octave (or two octaves) lower than the input, creating a sense of low-frequency depth.", params: ["Level", "Tone"], inputFX: true, trackFX: false },
+            "AUTO PAN": { description: "Cyclically varies the stereo position of the sound.", params: ["Rate", "Depth"], inputFX: true, trackFX: true },
+            "MANUAL PAN": { description: "Varies the stereo position of the sound.", params: ["Pan"], inputFX: true, trackFX: true },
+            "TREMOLO": { description: "Cyclically changes the volume.", params: ["Rate", "Depth"], inputFX: true, trackFX: true },
+            "SLICER": { description: "Repeatedly cuts the sound, transforming a conventional sound to create the impression of a rhythmic backing.", params: ["Pattern", "Rate"], inputFX: true, trackFX: true },
+            "DELAY": { description: "Adds a delayed sound to the direct sound, giving the sound greater depth or creating special effects.", params: ["Time (Tme) ☑", "Feedback (Fb)"], inputFX: true, trackFX: true },
+            "PANNING DELAY": { description: "Moves the delay sound alternately between left and right.", params: ["Time (Tme) ☑", "Feedback (Fb)"], inputFX: true, trackFX: true },
+            "TAPE ECHO": { description: "A virtual tape echo that produces a realistic tape delay sound.", params: ["Time (Tme) ☑", "Feedback (Fb)"], inputFX: true, trackFX: true },
+            "GRANULAR DELAY": { description: "Repeats the input sound at short intervals, producing an oscillator-like sound.", params: ["Time (Tme) ☑", "Density"], inputFX: true, trackFX: true },
+            "ROLL": { description: "Loops the sound in a short interval.", params: ["Length (Len) ☑", "Rate"], inputFX: true, trackFX: true },
+            "CHORUS": { description: "In this effect, a slightly detuned sound is added to the original sound to add depth and breadth.", params: ["Rate", "Depth"], inputFX: true, trackFX: true },
+            "REVERB": { description: "Adds reverberation to the sound.", params: ["Time (Tme)", "E. Level (ELv) ☑"], inputFX: true, trackFX: true },
+            "BEAT REPEAT": { description: "Plays the track repeatedly in time with the beat.", params: ["Length (Len) ☑"], inputFX: false, trackFX: true },
+            "BEAT SHIFT": { description: "The track will play shifted by the length of the beat.", params: ["Length (Len) ☑"], inputFX: false, trackFX: true },
+            "BEAT SCATTER": { description: "The track will be scrubbed in time with the beat.", params: ["Length (Len) ☑"], inputFX: false, trackFX: true },
+            "VINYL FLICK": { description: "The track will sound as though you are touching the turntable.", params: ["Flick (Flc) ☑"], inputFX: false, trackFX: true }
         };
-        const sequencersData = {
-            "Arpeggio": { description: "Takes the notes you hold and plays them one after another in various patterns.", source: "Manual p.88" },
-            "Finger": { description: "Records your finger drumming or key presses directly, capturing the nuances of your performance.", source: "Manual p.90" },
-            "Endless": { description: "A generative sequencer that continuously evolves patterns based on your input, great for ambient textures.", source: "Manual p.92" },
-            "Pattern": { description: "A step sequencer for creating precise rhythmic and melodic patterns.", source: "Manual p.94" },
-            "Tombola": { description: "A unique physics-based sequencer where notes bounce around a virtual drum, creating random yet musical patterns.", source: "Manual p.98" },
-            "Sketch": { description: "Allows you to draw patterns freely on the screen, translating your drawings into musical sequences.", source: "Manual p.100" },
-            "Hold": { description: "A simple sequencer that sustains notes or chords, freeing your hands for other tasks.", source: "Manual p.102" }
-        };
-        const shortcutsData = [
-            { combo: "SHIFT + T1", description: "Change Synth Engine.", category: "Synth" },
-            { combo: "SHIFT + T2", description: "Access Play Mode settings (Poly/Mono, Portamento).", category: "Synth" },
-            { combo: "SHIFT + T3", description: "Change Effect Type.", category: "Synth/Drum" },
-            { combo: "SHIFT + T4", description: "Change the LFO type.", category: "Synth/Drum" },
-            { combo: "HELP + (any key)", description: "Show contextual help for that key.", category: "Global" },
-            { combo: "SHIFT + HELP", description: "Open the built-in user guide.", category: "Global" },
-            { combo: "REC + PLAY", description: "Start recording to the armed track.", category: "Tape" },
-            { combo: "SHIFT + REC", description: "Arm recording without starting playback.", category: "Tape" },
-            { combo: "SHIFT + LIFT", description: "Lift audio from all 4 tracks within a loop.", category: "Tape" },
-            { combo: "SHIFT + SPLIT", description: "Join two adjacent audio takes.", category: "Tape" },
-            { combo: "SHIFT + (Arrow Keys)", description: "Jump between beat markers on the tape.", category: "Tape" },
-            { combo: "SHIFT + TAPE", description: "Open the Tape Browser to switch tapes and styles.", category: "Tape" },
-            { combo: "SHIFT + MIXER", description: "View the Sound Path diagram.", category: "Mixer" },
-            { combo: "SHIFT + SEQUENCER", description: "Choose and enable a sequencer.", category: "Sequencer" },
-            { combo: "SHIFT + INPUT", description: "Select input source for sampling (Mic, Line In, Radio, EAR).", category: "Sampling" },
-            { combo: "SHIFT + COM", description: "Access MTP file transfer mode.", category: "MIDI & Connectivity" },
-            { combo: "SHIFT + TEMPO", description: "Access System settings.", category: "Global" },
-            { combo: "LEFT/RIGHT Arrow Keys (in Tempo screen)", description: "Nudge tempo up/down.", category: "Pro Tips" },
-            { combo: "(Preset Key 1-8) (Hold 3s)", description: "Save current sound as a snapshot.", category: "Pro Tips" }
+
+        const externalControlData = [
+            { target: "OFF", description: "No assignment target." },
+            { target: "1", description: "Switches track 1 between record/play." },
+            { target: "2", description: "Switches track 2 between record/play." },
+            { target: "3", description: "Switches track 1 between play/stop." },
+            { target: "4", description: "Switches track 2 between play/stop." },
+            { target: "5", description: "Clears track 1." },
+            { target: "6", description: "Clears track 2." },
+            { target: "7", description: "Executes undo/redo for track 1." },
+            { target: "8", description: "Executes undo/redo for track 2." },
+            { target: "9", description: "Adjusts the volume (playback level) of track 1." },
+            { target: "10", description: "Adjusts the volume (playback level) of track 2." },
+            { target: "11", description: "Switches between record/play for the target track." },
+            { target: "12", description: "Stops the target track." },
+            { target: "13", description: "Clears the target track." },
+            { target: "14", description: "Executes undo/redo for the target track." },
+            { target: "15", description: "Adjusts the volume of the target track." },
+            { target: "16", description: "Allows simultaneous play/stop of all tracks." },
+            { target: "17", description: "Executes undo/redo (global)." },
+            { target: "18", description: "Plays/stops the rhythm." },
+            { target: "19", description: "Adjusts the volume of the rhythm." },
+            { target: "20", description: "Sets tempo by tapping (tap tempo)." },
+            { target: "21", description: "Adjusts the volume of the master compressor." },
+            { target: "22", description: "Adjusts the volume of the master reverb." },
+            { target: "23", description: "Switches the target track." },
+            { target: "24", description: "Switches to the next phrase memory." },
+            { target: "25", description: "Switches to the previous phrase memory." },
+            { target: "26", description: "Adjusts the input volume of the INPUT jacks." },
+            { target: "27", description: "Adjusts the output volume of the OUTPUT jacks." },
+            { target: "28", description: "Adjusts the volume of the headphones." },
+            { target: "29", description: "Adjusts the volume of track 1 in the range of 0-playback level." },
+            { target: "30", description: "Adjusts the volume of track 2 in the range of 0-playback level." },
+            { target: "31", description: "Adjusts the volume balance of tracks 1 and 2." },
+            { target: "32", description: "Controls the parameter assigned to the [INPUT FX] knob." },
+            { target: "33", description: "Controls the parameter assigned to the [TRACK FX] knob." },
+            { target: "34", description: "Switches to the next memory within the bank." },
+            { target: "35", description: "Switches to the previous memory within the bank." }
         ];
+
+        const systemShortcutsData = [
+            { combo: "SETUP + MEMORY (Hold)", description: "Access Factory Reset menu.", category: "System" },
+            { combo: "VALUE (Press & Turn)", description: "Fine-tune parameter values.", category: "Global" },
+            { combo: "RHYTHM START/STOP (Long Press)", description: "Access Rhythm settings menu.", category: "Rhythm" },
+            { combo: "TRACK (Button) + VALUE (Knob)", description: "Adjust individual track playback level.", category: "Track" },
+            { combo: "UNDO/REDO (Button) + TRACK (Button)", description: "Perform Undo/Redo for a specific track.", category: "Track" },
+            { combo: "MEMORY (Button) + VALUE (Knob, Press & Turn)", description: "Select bank in Play screen.", category: "Phrase Memory" },
+            { combo: "WRITE (Hold)", description: "Enter Delete Phrase Memory mode.", category: "Phrase Memory" },
+            { combo: "REC + PLAY", description: "Start recording on selected track.", category: "Basic Operations" },
+            { combo: "■ (Hold)", description: "Clear selected track.", category: "Basic Operations" },
+            { combo: "■ (Double Click, if Quick Clear ON)", description: "Quickly clear selected track.", category: "System" },
+            { combo: "P. SHIFT-DELAY (FX Button) + VALUE (Knob)", description: "Select FX type.", category: "Effects" },
+            { combo: "P. SHIFT-DELAY (FX Button) + VALUE (Knob, Press)", description: "Select FX parameter.", category: "Effects" },
+            { combo: "SETUP (EXIT) Button", description: "Exit current menu/setting screen.", category: "Global" }
+        ];
+
 
         let currentCategory = 'all';
         let currentTip = null;
@@ -484,30 +532,30 @@
         const detailsRelatedList = document.getElementById('related-tips-list');
         const suggestedTipContainer = document.getElementById('suggested-tip-container');
         const suggestedTipBoxContent = document.getElementById('suggested-tip-box-content');
-        // searchInput and searchButton are removed from HTML, so no need to get them here.
+        // Removed searchInput and searchButton
         const downloadPdfButton = document.getElementById('download-pdf-button');
 
         // Header Modal Buttons and Content Areas
-        const op1LicksButton = document.getElementById('op1-licks-button');
-        const op1LicksModal = document.getElementById('op1-licks-modal');
-        const closeOp1LicksModalButton = document.getElementById('close-op1-licks-modal');
-        const op1LicksContent = document.getElementById('op1-licks-content');
+        const rhythmPatternsButton = document.getElementById('rhythm-patterns-button');
+        const rhythmPatternsModal = document.getElementById('rhythm-patterns-modal');
+        const closeRhythmPatternsModalButton = document.getElementById('close-rhythm-patterns-modal');
+        const rhythmPatternsContent = document.getElementById('rhythm-patterns-content');
 
         const effectsListButton = document.getElementById('effects-list-button');
         const effectsListModal = document.getElementById('effects-list-modal');
         const closeEffectsListModalButton = document.getElementById('close-effects-list-modal');
         const effectsListContainer = document.getElementById('effects-list-container');
-        const effectsSearchInput = document.getElementById('effects-search-input'); // This one remains for modal-specific search
+        const effectsSearchInput = document.getElementById('effects-search-input');
 
-        const sequencersButton = document.getElementById('sequencers-button');
-        const sequencersModal = document.getElementById('sequencers-modal');
-        const closeSequencersModalButton = document.getElementById('close-sequencers-modal');
-        const sequencersContainer = document.getElementById('sequencers-container');
+        const externalControlButton = document.getElementById('external-control-button');
+        const externalControlModal = document.getElementById('external-control-modal');
+        const closeExternalControlModalButton = document.getElementById('close-external-control-modal');
+        const externalControlContainer = document.getElementById('external-control-container');
 
-        const shortcutsButton = document.getElementById('shortcuts-button');
-        const shortcutsModal = document.getElementById('shortcuts-modal');
-        const closeShortcutsModalButton = document.getElementById('close-shortcuts-modal');
-        const shortcutsContainer = document.getElementById('shortcuts-container');
+        const systemShortcutsButton = document.getElementById('system-shortcuts-button');
+        const systemShortcutsModal = document.getElementById('system-shortcuts-modal');
+        const closeSystemShortcutsModalButton = document.getElementById('close-system-shortcuts-modal');
+        const systemShortcutsContainer = document.getElementById('system-shortcuts-container');
 
 
         // --- HELPER FUNCTIONS ---
@@ -516,14 +564,16 @@
         };
 
         // --- DISPLAY FUNCTIONS ---
-        const displayTips = (filter = 'all') => { // Removed searchTerm parameter
+        const displayTips = (filter = 'all', searchTerm = '') => {
             tipsContainer.innerHTML = '';
             topTipsContainer.innerHTML = '';
-            // No lowerCaseSearchTerm needed here as main search is removed
+            const lowerCaseSearchTerm = searchTerm.toLowerCase();
             const filteredTips = tipsData.filter(tip => {
                 const categoryMatch = (filter === 'all' || tip.category === filter);
-                // searchMatch is always true now for main display
-                return categoryMatch;
+                // Search functionality removed from main display, but kept for effects modal search
+                const searchMatch = true; // Always true if no main search input
+                
+                return categoryMatch && searchMatch;
             });
             
             filteredTips.forEach(tip => {
@@ -567,7 +617,7 @@
                     currentCategory = button.dataset.category;
                     document.querySelectorAll('.tip-category-button').forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
-                    displayTips(currentCategory); // No search term passed
+                    displayTips(currentCategory, ''); // No search term from main input
                 }
             });
         };
@@ -645,12 +695,11 @@
         };
 
         // --- OTHER MODAL POPULATION ---
-        const populateOp1Licks = () => {
-            op1LicksContent.innerHTML = op1LicksData.map(lick => `
+        const populateRhythmPatterns = () => {
+            rhythmPatternsContent.innerHTML = rhythmPatternsData.map(pattern => `
                 <div class="tip-item mb-4">
-                    <h4 class="text-xl font-bold text-white">${lick.title}</h4>
-                    <p class="text-sm text-gray-400 mb-2">Sequencer: ${lick.sequencer}</p>
-                    <p>${lick.description}</p>
+                    <h4 class="text-xl font-bold text-white">${pattern.title}</h4>
+                    <p>${pattern.description}</p>
                 </div>
             `).join('');
         };
@@ -659,38 +708,51 @@
             const lowerCaseSearchTerm = searchTerm.toLowerCase();
             effectsListContainer.innerHTML = Object.entries(effectsListData)
                 .filter(([name, data]) => name.toLowerCase().includes(lowerCaseSearchTerm) ||
-                                         data.description.toLowerCase().includes(lowerCaseSearchTerm))
+                                         data.description.toLowerCase().includes(lowerCaseSearchTerm) ||
+                                         data.params.some(p => p.toLowerCase().includes(lowerCaseSearchTerm)))
                 .map(([name, data]) => `
                     <div class="tip-item mb-4">
                         <h4 class="text-xl font-bold text-white">${name}</h4>
+                        <p class="text-sm text-gray-400 mb-2">Input FX: ${data.inputFX ? '✔' : '☐'} | Track FX: ${data.trackFX ? '✔' : '☐'}</p>
                         <p>${data.description}</p>
                         ${data.params.length > 0 ? `<p class="text-sm text-gray-500 mt-2">Parameters: ${data.params.join(', ')}</p>` : ''}
                     </div>
                 `).join('');
         };
         
-        const populateSequencers = () => {
-            sequencersContainer.innerHTML = Object.entries(sequencersData).map(([name, data]) => `
-                <div class="tip-item mb-4">
-                    <h4 class="text-xl font-bold text-bold">${name}</h4>
-                    <p class="text-sm text-gray-400 mb-2">Source: ${data.source}</p>
-                    <p>${data.description}</p>
-                </div>
-            `).join('');
-        };
-
-        const populateShortcuts = () => {
-            shortcutsContainer.innerHTML = `
+        const populateExternalControl = () => {
+            externalControlContainer.innerHTML = `
                 <table class="combo-table">
                     <thead>
                         <tr>
-                            <th>Key Combination</th>
-                            <th>Action</th>
+                            <th>Target Value</th>
+                            <th>Function Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${externalControlData.map(item => `
+                            <tr>
+                                <td><span class="combo-key">${item.target}</span></td>
+                                <td>${item.description}</td>
+                            </tr>
+                        `).join('')}
+                    </tbody>
+                </table>
+            `;
+        };
+
+        const populateSystemShortcuts = () => {
+            systemShortcutsContainer.innerHTML = `
+                <table class="combo-table">
+                    <thead>
+                        <tr>
+                            <th>Combination/Setting</th>
+                            <th>Action/Explanation</th>
                             <th>Category</th>
                         </tr>
                     </thead>
                     <tbody>
-                        ${shortcutsData.map(shortcut => `
+                        ${systemShortcutsData.map(shortcut => `
                             <tr>
                                 <td><span class="combo-key">${shortcut.combo.replace(/\+/g, '+</span> <span class="combo-key">')}</span></td>
                                 <td>${shortcut.description}</td>
@@ -709,11 +771,11 @@
             let y = 15;
             const pageHeight = doc.internal.pageSize.height;
             const margin = 10;
-            doc.setFontSize(18);
-            doc.text("Charles Paris OP-1 Field Guide: Ultimate Edition", margin, y);
+            doc.setFontSize(22);
+            doc.text("Charles Paris RC-202 Loop Station Guide", margin, y);
             y += 15;
             doc.setFontSize(10);
-            doc.text("Master your Teenage Engineering OP-1 Field with this comprehensive guide by Charles Paris Music.", margin, y);
+            doc.text("Comprehensive Parameter and Operation Guide", margin, y);
             y += 20;
 
             tipsData.forEach(tip => {
@@ -721,10 +783,10 @@
                     doc.addPage();
                     y = 15;
                 }
-                doc.setFontSize(12);
+                doc.setFontSize(14);
                 doc.setFont(undefined, 'bold');
                 doc.text(`${tip.title} (${categories[tip.category].name})`, margin, y);
-                y += 7;
+                y += 8;
                 doc.setFontSize(10);
                 doc.setFont(undefined, 'normal');
                 const descLines = doc.splitTextToSize(tip.description, doc.internal.pageSize.width - 2 * margin);
@@ -737,7 +799,7 @@
                 }
                 y += 5; // Extra space between tips
             });
-            doc.save('op1-charles-paris-guide.pdf');
+            doc.save('rc202-charles-paris-guide.pdf');
         };
 
         // --- EVENT LISTENERS ---
@@ -750,7 +812,7 @@
         backToTipButton.addEventListener('click', hideDetailsView);
         copyTipButton.addEventListener('click', () => {
             if (!currentTip) return;
-            const textToCopy = `${currentTip.title}\n\n${currentTip.description}`;
+            const textToCopy = `${currentTip.title}\n\n${currentTip.description}\n\n${currentTip.context ? 'Context: ' + currentTip.context : ''}`;
             const textArea = document.createElement("textarea");
             textArea.value = textToCopy;
             document.body.appendChild(textArea);
@@ -758,13 +820,7 @@
             document.execCommand('copy');
             document.body.removeChild(textArea);
             // Optional: Provide visual feedback that text was copied
-            // Using alert for simplicity, replace with custom modal if desired
-            // alert('Tip copied to clipboard!'); 
-            const originalText = copyTipButton.innerHTML;
-            copyTipButton.innerHTML = '<i class="fa-solid fa-check mr-2"></i> Copied!';
-            setTimeout(() => {
-                copyTipButton.innerHTML = originalText;
-            }, 1500);
+            alert('Tip copied to clipboard!'); // Using alert for simplicity, replace with custom modal if desired
         });
 
         // Setup header modal toggles
@@ -779,10 +835,10 @@
             });
         };
 
-        setupModalToggle(op1LicksButton, op1LicksModal, closeOp1LicksModalButton, populateOp1Licks);
+        setupModalToggle(rhythmPatternsButton, rhythmPatternsModal, closeRhythmPatternsModalButton, populateRhythmPatterns);
         setupModalToggle(effectsListButton, effectsListModal, closeEffectsListModalButton, populateEffectsList);
-        setupModalToggle(sequencersButton, sequencersModal, closeSequencersModalButton, populateSequencers);
-        setupModalToggle(shortcutsButton, shortcutsModal, closeShortcutsModalButton, populateShortcuts);
+        setupModalToggle(externalControlButton, externalControlModal, closeExternalControlModalButton, populateExternalControl);
+        setupModalToggle(systemShortcutsButton, systemShortcutsModal, closeSystemShortcutsModalButton, populateSystemShortcuts);
 
         // Search functionality for effects modal only
         effectsSearchInput.addEventListener('input', () => populateEffectsList(effectsSearchInput.value));
